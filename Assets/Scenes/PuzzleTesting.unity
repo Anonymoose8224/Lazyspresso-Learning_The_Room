@@ -131,7 +131,6 @@ GameObject:
   - component: {fileID: 106375633}
   - component: {fileID: 106375632}
   - component: {fileID: 106375631}
-  - component: {fileID: 106375635}
   m_Layer: 0
   m_Name: PuzzleInteractable
   m_TagString: PuzzleInteractable
@@ -232,21 +231,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &106375635
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 106375630}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 511d3c5c8a2f3704da012b87caff6d6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InteractableObject
-  onInteract:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &165386609
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,30 +370,13 @@ GameObject:
   - component: {fileID: 322467027}
   - component: {fileID: 322467026}
   - component: {fileID: 322467025}
-  - component: {fileID: 322467024}
-  - component: {fileID: 322467029}
   m_Layer: 0
-  m_Name: PuzzlePiece
+  m_Name: PuzzlePiece1
   m_TagString: PuzzlePiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &322467024
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 322467023}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 511d3c5c8a2f3704da012b87caff6d6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InteractableObject
-  onInteract:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!65 &322467025
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -503,21 +470,118 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &322467029
-MonoBehaviour:
+--- !u!1 &554027200
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 322467023}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 554027204}
+  - component: {fileID: 554027203}
+  - component: {fileID: 554027202}
+  - component: {fileID: 554027201}
+  m_Layer: 0
+  m_Name: PuzzlePiece2
+  m_TagString: PuzzlePiece
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &554027201
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554027200}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74d4c4aba697674418ba16e0297311b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  itemName: PuzzlePieceTest
-  icon: {fileID: 0}
-  maxStackSize: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &554027202
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554027200}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 3cb3d939542a99641982c3a9c7551840, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &554027203
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554027200}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &554027204
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554027200}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.65, y: 0.25, z: 0.73}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &645793227
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,7 +594,6 @@ GameObject:
   - component: {fileID: 645793229}
   - component: {fileID: 645793228}
   - component: {fileID: 645793231}
-  - component: {fileID: 645793232}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -656,22 +719,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!114 &645793232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 645793227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15490b8f2be5e324f9418bea2efa2d96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerCamera
-  m_Camera: {fileID: 645793230}
-  minPitch: -45
-  maxPitch: 45
-  currentPitch: 0
 --- !u!1 &916079336
 GameObject:
   m_ObjectHideFlags: 0
@@ -800,6 +847,8 @@ GameObject:
   - component: {fileID: 1311241719}
   - component: {fileID: 1311241718}
   - component: {fileID: 1311241720}
+  - component: {fileID: 1311241722}
+  - component: {fileID: 1311241721}
   m_Layer: 0
   m_Name: TempPlayer
   m_TagString: Player
@@ -928,12 +977,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 587700b4cc9296f4080685f28e72dd26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  plCam: {fileID: 645793232}
+  plCam: {fileID: 1311241722}
   plMove: {fileID: 1311241717}
-  maxDistance: 3
-  itemTagPickup: PuzzlePiece
-  itemTagDeposit: PuzzleInteractable
-  heldItem: {fileID: 0}
+  inventorySystem: {fileID: 1311241721}
 --- !u!143 &1311241719
 CharacterController:
   m_ObjectHideFlags: 0
@@ -986,6 +1032,39 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &1311241721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311241712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c08957137bdc7046a7f87a15b57b414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventorySystem
+  inventorySlots:
+  - item: {fileID: 0}
+  itemTagPickup: PuzzlePiece
+  itemTagDeposit: PuzzleInteractable
+  maxDistance: 10
+--- !u!114 &1311241722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311241712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15490b8f2be5e324f9418bea2efa2d96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCamera
+  m_Camera: {fileID: 645793230}
+  minPitch: -90
+  maxPitch: 90
+  currentPitch: 0
 --- !u!1 &1561946841
 GameObject:
   m_ObjectHideFlags: 0
@@ -1108,3 +1187,4 @@ SceneRoots:
   - {fileID: 1311241716}
   - {fileID: 106375634}
   - {fileID: 322467028}
+  - {fileID: 554027204}

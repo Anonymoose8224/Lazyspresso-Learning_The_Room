@@ -8,12 +8,8 @@ public class Player : MonoBehaviour
     PlayerControls plControls;
 
     //Used for the inventory picking up
-    [SerializeField] private float maxDistance = 3f;
-    private InventorySystem inventorySystem;
-    [SerializeField] private string itemTagPickup = "PuzzlePiece";
-    [SerializeField] private string itemTagDeposit = "PuzzleInteractable";
-    [SerializeField] private ItemData heldItem;
-    
+    [SerializeField] private InventorySystem inventorySystem;
+
     Vector2 moveInput;
     bool isActive = true;
 
@@ -61,42 +57,6 @@ public class Player : MonoBehaviour
 
     private void Interact(InputAction.CallbackContext ctx)
     {
-        if (ctx.performed)
-        {
-            RaycastInteraction();
-        }
-    }
-    
-    private void RaycastInteraction()
-    {
-        Ray ray = Camera.main.ViewportPointToRay(new Vector3(.5f, .5f, 0));
-        if(Physics.Raycast(ray, out RaycastHit hitObject, maxDistance))
-        {
-            GameObject objectPuzzle = hitObject.collider.gameObject;
-            if(objectPuzzle.CompareTag(itemTagPickup) && heldItem == null)
-            {
-            }
-        }
-    }
-
-    private void OnDrawGizmos()
-    {
-        if (!Application.isPlaying)
-        {
-            return;
-        }
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hitObject))
-        {
-            Gizmos.color = Color.blue;
-            Gizmos.DrawSphere(hitObject.point, 0.10f);
-            Gizmos.color = Color.green;
-            Gizmos.DrawLine(transform.position, hitObject.point);
-        }
-        else
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawLine(transform.position, transform.position + transform.forward * 50);
-        }
+        inventorySystem.RaycastInteraction();
     }
 }

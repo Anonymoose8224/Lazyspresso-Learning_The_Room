@@ -10,6 +10,9 @@ public class PlayerMove : MonoBehaviour
         Vector3 direction = transform.forward * input.y + transform.right * input.x;
 
         characterController.Move(direction * speed * Time.deltaTime);
+
+        characterController.SimpleMove(direction * speed * Time.deltaTime);
+
     }
 
     public void Rotate(float inputX)

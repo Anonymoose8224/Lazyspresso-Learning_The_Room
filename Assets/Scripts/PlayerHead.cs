@@ -6,9 +6,11 @@ public class Player : MonoBehaviour
     [SerializeField] PlayerCamera plCam;
     [SerializeField] PlayerMove plMove;
     PlayerControls plControls;
-
-    //Used for the inventory picking up
+    [SerializeField] private float maxDistance = 10f;
+    [SerializeField] private string itemTagPickup = "PuzzlePiece";
+    [SerializeField] private string itemTagDeposit = "PuzzleInteractable";
     [SerializeField] private InventorySystem inventorySystem;
+    [SerializeField] private PuzzleSolving puzzleSolving;
 
     Vector2 moveInput;
     bool isActive = true;
@@ -57,6 +59,19 @@ public class Player : MonoBehaviour
 
     private void Interact(InputAction.CallbackContext ctx)
     {
-        inventorySystem.RaycastInteraction();
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit hitObject, maxDistance))
+        {
+            GameObject objectPuzzle = hitObject.collider.gameObject;
+            GameObject objectInteracting = hitObject.collider.gameObject;
+            if (objectPuzzle.CompareTag(itemTagPickup))
+            {
+                inventorySystem.AddItem(objectPuzzle);
+            }
+            else if (objectInteracting.CompareTag(itemTagDeposit))
+            {
+                puzzleSolving.PuzzleSystem();
+            }
+        }
     }
 }

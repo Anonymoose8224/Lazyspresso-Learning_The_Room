@@ -3,17 +3,14 @@ using UnityEngine;
 [System.Serializable]
 public class InventorySlot
 {
-    public ItemData itemData;
-    public int quantity;
-    public bool isEmpty => itemData == null;
-    public InventorySlot(ItemData item, int amount)
+    public GameObject item;
+    public bool isEmpty => item == null;
+    public InventorySlot(GameObject item)
     {
-        itemData = item;
-        quantity = amount;
+        this.item = item;
     }
     public void Clear()
     {
-        itemData = null;
-        quantity = 0;
+        item = null;
     }
 }

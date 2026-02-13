@@ -43,6 +43,7 @@ public class Player : MonoBehaviour
             return;
 
         plMove.Move(moveInput);
+       
 
     }
 

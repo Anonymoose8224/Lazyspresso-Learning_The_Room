@@ -6,14 +6,12 @@ public class Player : MonoBehaviour
     [SerializeField] PlayerCamera plCam;
     [SerializeField] PlayerMove plMove;
     PlayerControls plControls;
-
-    //Used for the inventory picking up
-    [SerializeField] private float maxDistance = 3f;
-    private InventorySystem inventorySystem;
+    [SerializeField] private float maxDistance = 10f;
     [SerializeField] private string itemTagPickup = "PuzzlePiece";
     [SerializeField] private string itemTagDeposit = "PuzzleInteractable";
-    [SerializeField] private ItemData heldItem;
-    
+    [SerializeField] private InventorySystem inventorySystem;
+    [SerializeField] private PuzzleSolving puzzleSolving;
+
     Vector2 moveInput;
     bool isActive = true;
 
@@ -61,42 +59,19 @@ public class Player : MonoBehaviour
 
     private void Interact(InputAction.CallbackContext ctx)
     {
-        if (ctx.performed)
-        {
-            RaycastInteraction();
-        }
-    }
-    
-    private void RaycastInteraction()
-    {
-        Ray ray = Camera.main.ViewportPointToRay(new Vector3(.5f, .5f, 0));
-        if(Physics.Raycast(ray, out RaycastHit hitObject, maxDistance))
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit hitObject, maxDistance))
         {
             GameObject objectPuzzle = hitObject.collider.gameObject;
-            if(objectPuzzle.CompareTag(itemTagPickup) && heldItem == null)
+            GameObject objectInteracting = hitObject.collider.gameObject;
+            if (objectPuzzle.CompareTag(itemTagPickup))
             {
+                inventorySystem.AddItem(objectPuzzle);
             }
-        }
-    }
-
-    private void OnDrawGizmos()
-    {
-        if (!Application.isPlaying)
-        {
-            return;
-        }
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hitObject))
-        {
-            Gizmos.color = Color.blue;
-            Gizmos.DrawSphere(hitObject.point, 0.10f);
-            Gizmos.color = Color.green;
-            Gizmos.DrawLine(transform.position, hitObject.point);
-        }
-        else
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawLine(transform.position, transform.position + transform.forward * 50);
+            else if (objectInteracting.CompareTag(itemTagDeposit))
+            {
+                puzzleSolving.PuzzleSystem();
+            }
         }
     }
 }

@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 106375633}
   - component: {fileID: 106375632}
   - component: {fileID: 106375631}
+  - component: {fileID: 106375635}
   m_Layer: 0
   m_Name: PuzzleInteractable
   m_TagString: PuzzleInteractable
@@ -231,6 +232,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &106375635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106375630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0bfcdf022202ba44b169d1aece6ec2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PuzzleSolving
+  requiredItems: []
+  inventorySystem: {fileID: 1311241721}
+  requiredItemsNumber: 0
+  itemsSubmitted: []
+  itemsSubmittedNumber: 0
+  itemsGiven: []
+  specialItemGiven: {fileID: 0}
 --- !u!1 &165386609
 GameObject:
   m_ObjectHideFlags: 0
@@ -979,7 +999,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player
   plCam: {fileID: 1311241722}
   plMove: {fileID: 1311241717}
+  maxDistance: 10
+  itemTagPickup: PuzzlePiece
+  itemTagDeposit: PuzzleInteractable
   inventorySystem: {fileID: 1311241721}
+  puzzleSolving: {fileID: 0}
 --- !u!143 &1311241719
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1046,9 +1070,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InventorySystem
   inventorySlots:
   - item: {fileID: 0}
-  itemTagPickup: PuzzlePiece
-  itemTagDeposit: PuzzleInteractable
-  maxDistance: 10
+  specialInventory: []
 --- !u!114 &1311241722
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,11 +6,8 @@ public class Player : MonoBehaviour
     [SerializeField] PlayerCamera plCam;
     [SerializeField] PlayerMove plMove;
     PlayerControls plControls;
+    //[SerializeField] Baseinteractable plInteractable;
     [SerializeField] private float maxDistance = 10f;
-    [SerializeField] private string itemTagPickup = "PuzzlePiece";
-    [SerializeField] private string itemTagDeposit = "PuzzleInteractable";
-    [SerializeField] private InventorySystem inventorySystem;
-    [SerializeField] private PuzzleSolving puzzleSolving;
 
     Vector2 moveInput;
     bool isActive = true;
@@ -30,7 +27,6 @@ public class Player : MonoBehaviour
         Cursor.visible = false;
 
         Cursor.lockState = CursorLockMode.Locked;
-        inventorySystem = GetComponent<InventorySystem>();
 
     }
 
@@ -60,19 +56,17 @@ public class Player : MonoBehaviour
 
     private void Interact(InputAction.CallbackContext ctx)
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hitObject, maxDistance))
+        Ray ray = new Ray(plCam.transform.position, plCam.transform.forward);
+
+        if (Physics.Raycast(ray, out RaycastHit hit, maxDistance))
         {
-            GameObject objectPuzzle = hitObject.collider.gameObject;
-            GameObject objectInteracting = hitObject.collider.gameObject;
-            if (objectPuzzle.CompareTag(itemTagPickup))
+            Baseinteractable interact = hit.collider.GetComponent<Baseinteractable>();
+        
+            if(interact != null)
             {
-                inventorySystem.AddItem(objectPuzzle);
+                interact.Interact(ray, maxDistance);
             }
-            else if (objectInteracting.CompareTag(itemTagDeposit))
-            {
-                puzzleSolving.PuzzleSystem();
-            }
+        
         }
     }
 }

@@ -22,5 +22,6 @@ public enum DialogueNPCS
     Bargaining,
     Depression,
     Acceptance,
+    Baby,
     Branch
 };

@@ -10,7 +10,6 @@ public class Player : MonoBehaviour
     [SerializeField] private string itemTagPickup = "PuzzlePiece";
     [SerializeField] private string itemTagDeposit = "PuzzleInteractable";
     [SerializeField] private InventorySystem inventorySystem;
-    [SerializeField] private PuzzleSolving puzzleSolving;
 
     Vector2 moveInput;
     bool isActive = true;
@@ -60,19 +59,31 @@ public class Player : MonoBehaviour
 
     private void Interact(InputAction.CallbackContext ctx)
     {
+        if (Camera.main == null) return;
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hitObject, maxDistance))
+
+        if (!Physics.Raycast(ray, out RaycastHit hit, maxDistance))
+            return;
+
+        GameObject hitObj = hit.collider.gameObject;
+
+        // Pickup item
+        if (hitObj.CompareTag(itemTagPickup))
         {
-            GameObject objectPuzzle = hitObject.collider.gameObject;
-            GameObject objectInteracting = hitObject.collider.gameObject;
-            if (objectPuzzle.CompareTag(itemTagPickup))
-            {
-                inventorySystem.AddItem(objectPuzzle);
-            }
-            else if (objectInteracting.CompareTag(itemTagDeposit))
-            {
-                puzzleSolving.PuzzleSystem();
-            }
+            inventorySystem.AddItem(hitObj);
+            return;
+        }
+
+        // Try puzzle on this object or its parent
+        PuzzleSolving puzzle = hitObj.GetComponent<PuzzleSolving>();
+
+        if (puzzle == null)
+            puzzle = hitObj.GetComponentInParent<PuzzleSolving>();
+
+        if (puzzle != null)
+        {
+            puzzle.PuzzleSystem();
         }
     }
 }

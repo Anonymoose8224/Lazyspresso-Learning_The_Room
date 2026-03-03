@@ -13,6 +13,7 @@ public class PuzzleInteractable : Baseinteractable
     public override void Interact(Ray ray, float maxDistance)
     {
         inventorySystem.AddItem(gameObject);
+
         /*if (Physics.Raycast(ray, out RaycastHit hitObject, maxDistance))
         {
             GameObject objectPuzzle = hitObject.collider.gameObject;

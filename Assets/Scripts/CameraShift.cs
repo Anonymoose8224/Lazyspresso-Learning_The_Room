@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class CameraShift : MonoBehaviour
 {
-    [SerializeField] Player player;
+    [SerializeField] PlayerHead pl;
     [SerializeField] PlayerCamera plCam;
     [SerializeField] private float maxDistance = 10f;
     [SerializeField] private Vector3 origCamPos;
     [SerializeField] private Quaternion origCamRot;
     public void EnterCamShift(Transform CamPoint)
     {
-        player.enabled = false;
+        pl.isActive = false;
 
         origCamPos = plCam.transform.position;
         origCamRot = plCam.transform.rotation;
@@ -23,8 +23,8 @@ public class CameraShift : MonoBehaviour
 
     public void ExitCamShift()
     {
-        player.enabled = true;
-        
+        pl.isActive = true;
+
         plCam.transform.position = origCamPos;
         plCam.transform.rotation = origCamRot;
 

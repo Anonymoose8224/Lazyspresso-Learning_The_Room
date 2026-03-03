@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Player : MonoBehaviour
+public class PlayerHead : MonoBehaviour
 {
     [SerializeField] PlayerCamera plCam;
     [SerializeField] PlayerMove plMove;
@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float maxDistance = 10f;
 
     Vector2 moveInput;
-    bool isActive = true;
+    public bool isActive = true;
 
     private void Awake()
     {
@@ -68,5 +68,10 @@ public class Player : MonoBehaviour
             }
         
         }
+    }
+
+    public void OnDrawGizmos()
+    {
+        
     }
 }

@@ -1,60 +1,49 @@
 using UnityEngine;
 
-public class SimpleHeadTurn : MonoBehaviour
+public class FoxHeadTrackZOnly : MonoBehaviour
 {
-    [Header("References")]
-    public Transform headObject;        // The fox's head
-    public Transform player;            // The player
-    public float detectionRange = 10f;  // How close player needs to be
+    public Transform player;
+    public Transform head;
 
-    [Header("Turn Settings")]
-    public float turnSpeed = 3f;        // How fast head turns
-    public float maxTurnAngle = 70f;    // How far head can turn left/right
+    public float detectionRange = 8f;
+    public float rotationSpeed = 5f;
+    public float maxTurnAngle = 60f;
 
-    private float targetAngle = 0f;
-    private float currentAngle = 0f;
-
-    void Start()
-    {
-        if (player == null)
-            player = GameObject.FindGameObjectWithTag("Player").transform;
-    }
+    private float currentZ = 0f;
 
     void Update()
     {
-        if (headObject == null || player == null) return;
-
-        // Check distance to player
         float distance = Vector3.Distance(transform.position, player.position);
 
         if (distance <= detectionRange)
         {
-            // Calculate angle to player
-            Vector3 directionToPlayer = player.position - transform.position;
-            directionToPlayer.y = 0; // Ignore height difference
+            Vector3 direction = player.position - head.position;
+            direction.y = 0f;
 
-            float angle = Vector3.SignedAngle(transform.forward, directionToPlayer, Vector3.up);
+            float targetAngle = Vector3.SignedAngle(
+                transform.forward,
+                direction,
+                Vector3.up
+            );
 
-            // Limit how far the head can turn
-            targetAngle = Mathf.Clamp(angle, -maxTurnAngle, maxTurnAngle);
+            targetAngle = Mathf.Clamp(targetAngle, -maxTurnAngle, maxTurnAngle);
+
+            currentZ = Mathf.Lerp(
+                currentZ,
+                targetAngle,
+                Time.deltaTime * rotationSpeed
+            );
         }
         else
         {
-            // Return to facing forward when player leaves
-            targetAngle = 0;
+            currentZ = Mathf.Lerp(
+                currentZ,
+                0f,
+                Time.deltaTime * rotationSpeed
+            );
         }
 
-        // Smoothly rotate head towards target angle
-        currentAngle = Mathf.Lerp(currentAngle, targetAngle, Time.deltaTime * turnSpeed);
-
-        // Apply rotation (only left/right turning)
-        headObject.localRotation = Quaternion.Euler(0, currentAngle, 0);
-    }
-
-    // Draw the detection range in editor
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, detectionRange);
+        // ?? LOCK X and Y to 0 always
+        head.localRotation = Quaternion.Euler(0f, 0f, currentZ);
     }
 }

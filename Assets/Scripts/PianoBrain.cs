@@ -7,6 +7,10 @@ public class PianoBrain : MonoBehaviour
 {
     [SerializeField] private PlayerControls pianoControls;
     [SerializeField] private List<int> correctPswd;
+    [SerializeField] private PianoInteractable pianointer;
+    [SerializeField] private InventorySystem inventorySystem;
+    [SerializeField] GameObject PianoItem;
+
 
     private List<int> playerComb = new List<int>();
 
@@ -34,15 +38,17 @@ public class PianoBrain : MonoBehaviour
         if (playerComb.Count == correctPswd.Count)
         {
             Debug.Log("Correct");
+            pianointer.PianoExit();
+            pianointer.enabled = false;
+            inventorySystem.AddItemSpecial(PianoItem);
+            correctPswd.Clear();
+
         }
     }
 
     private void PianoKeyClick(UnityEngine.InputSystem.InputAction.CallbackContext ctx)
     {
-        Vector2 mousePos = ctx.ReadValue<Vector2>();    
-
-        if (Mouse.current.leftButton.wasPressedThisFrame)
-        {
+        
             Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
 
             if (Physics.Raycast(ray, out RaycastHit hit))
@@ -53,7 +59,7 @@ public class PianoBrain : MonoBehaviour
                     pianoKeys.PlayNote();
                 }
             }
-        }
+        
     
     }
 

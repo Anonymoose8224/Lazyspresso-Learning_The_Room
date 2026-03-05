@@ -11,6 +11,8 @@ public class CameraShift : MonoBehaviour
     {
         pl.isActive = false;
 
+        plCam.CanLook = false;
+
         origCamPos = plCam.transform.position;
         origCamRot = plCam.transform.rotation;
 
@@ -24,6 +26,9 @@ public class CameraShift : MonoBehaviour
     public void ExitCamShift()
     {
         pl.isActive = true;
+
+        plCam.CanLook = true;
+
 
         plCam.transform.position = origCamPos;
         plCam.transform.rotation = origCamRot;

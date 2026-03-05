@@ -49,9 +49,12 @@ public class PlayerHead : MonoBehaviour
 
     private void Look(InputAction.CallbackContext ctx)
     {
-        Vector2 inputValues = ctx.ReadValue<Vector2>();
-        plMove.Rotate(inputValues.x);
-        plCam.Rotate(inputValues.y);
+        if (plCam.CanLook == true)
+        {
+            Vector2 inputValues = ctx.ReadValue<Vector2>();
+            plMove.Rotate(inputValues.x);
+            plCam.Rotate(inputValues.y);
+        }
     }
 
     private void Interact(InputAction.CallbackContext ctx)

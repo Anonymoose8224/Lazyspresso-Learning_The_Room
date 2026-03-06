@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] private string itemTagPickup = "PuzzlePiece";
     [SerializeField] private string itemTagDeposit = "PuzzleInteractable";
     [SerializeField] private InventorySystem inventorySystem;
+    [SerializeField] TempPauseMenu pauseMenu;
 
     Vector2 moveInput;
     bool isActive = true;
@@ -21,6 +22,8 @@ public class Player : MonoBehaviour
 
         plControls.FPPlayer.Move.performed += Move;
         plControls.FPPlayer.Move.canceled += Move;
+
+        plControls.UI.Pause.performed += TogglePause;
 
         plControls.FPPlayer.Look.performed += Look;
 
@@ -36,7 +39,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isActive)
+        if (!isActive || pauseMenu.IsPaused() || plMove == null)
             return;
 
         plMove.Move(moveInput);
@@ -52,6 +55,9 @@ public class Player : MonoBehaviour
 
     private void Look(InputAction.CallbackContext ctx)
     {
+        if (pauseMenu.IsPaused() || plMove == null || plCam == null)
+            return;
+
         Vector2 inputValues = ctx.ReadValue<Vector2>();
         plMove.Rotate(inputValues.x);
         plCam.Rotate(inputValues.y);
@@ -85,5 +91,17 @@ public class Player : MonoBehaviour
         {
             puzzle.PuzzleSystem();
         }
+    }
+
+    private void TogglePause(InputAction.CallbackContext ctx)
+    {
+        if (pauseMenu != null)
+            pauseMenu.TogglePause();
+    }
+
+    private void OnDisable()
+    {
+        plControls.FPPlayer.Disable();
+        plControls.UI.Disable();
     }
 }

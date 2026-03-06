@@ -1,4 +1,3 @@
-using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,6 +10,9 @@ public class PuzzleSolving : MonoBehaviour
     [SerializeField] private int itemsSubmittedNumber;
     [SerializeField] private GameObject[] itemsGiven;
     [SerializeField] private GameObject specialItemGiven;
+    [SerializeField] private bool puzzleCompleted = false;
+    [SerializeField] private GameObject door;
+    [SerializeField] private List<GameObject> requiredSpecialItems;
     private void Awake()
     {
         requiredItemsNumber = requiredItems.Count;
@@ -20,11 +22,21 @@ public class PuzzleSolving : MonoBehaviour
 
     public void PuzzleSystem()
     {
-        if (CheckingRequiredItems() == true)
+        if (puzzleCompleted)
         {
+            Debug.Log("Puzzle already complete!");
+            return;
+        }
+
+        if (CheckingRequiredItems())
+        {
+            puzzleCompleted = true;
             Debug.Log("Puzzle Complete!");
             GiveItemToPlayer();
             GiveSpecialItem();
+
+            //Disables the door is door (Will need to be changed eventually)
+            door.SetActive(false);
         }
         else
         {
@@ -33,54 +45,98 @@ public class PuzzleSolving : MonoBehaviour
     }
     public void GiveSpecialItem()
     {
-        inventorySystem.AddItemSpecial(specialItemGiven);
+        if (specialItemGiven != null)
+        {
+            inventorySystem.AddItemSpecial(specialItemGiven);
+        }
     }
     public void GiveItemToPlayer()
     {
-        int counterCheckEmpty = 0;
+        int emptySlots = 0;
+
         for (int i = 0; i < inventorySystem.inventorySlots.Length; i++)
         {
-            if (!inventorySystem.inventorySlots[i].isEmpty)
+            if (inventorySystem.inventorySlots[i].isEmpty)
             {
-                counterCheckEmpty++;
+                emptySlots++;
             }
-            if(counterCheckEmpty == inventorySystem.inventorySlots.Length || counterCheckEmpty > inventorySystem.inventorySlots.Length)
-            {
-                Debug.Log("Inventory too full to recieve reward!");
-                return;
-            }
-            else if(counterCheckEmpty > 0 && counterCheckEmpty < requiredItemsNumber)
-            {
-                Debug.Log("Space in inventory! You will recieve the reward!");
-                foreach (GameObject item in itemsGiven)
-                {
-                    inventorySystem.AddItem(item);
-                }
-                return;
-            }
+        }
+
+        if (emptySlots < itemsGiven.Length)
+        {
+            Debug.Log("Inventory too full to receive reward!");
+            return;
+        }
+
+        Debug.Log("Space in inventory! You will receive the reward!");
+
+        foreach (GameObject item in itemsGiven)
+        {
+            inventorySystem.AddItem(item);
         }
     }
     public bool CheckingRequiredItems()
     {
-        foreach (GameObject item in requiredItems)
+        itemsSubmittedNumber = 0;
+
+        for (int i = 0; i < itemsSubmitted.Length; i++)
         {
+            itemsSubmitted[i] = null;
+        }
+
+        // First make sure all normal items exist
+        foreach (GameObject requiredItem in requiredItems)
+        {
+            bool foundItem = false;
+
             for (int i = 0; i < inventorySystem.inventorySlots.Length; i++)
             {
-                for(int j = 0; j < requiredItemsNumber; j++)
+                if (!inventorySystem.inventorySlots[i].isEmpty &&
+                    inventorySystem.inventorySlots[i].item == requiredItem)
                 {
-                    if (inventorySystem.inventorySlots[i].item == item && item != itemsSubmitted[j])
-                    {
-                        itemsSubmitted[j] = inventorySystem.inventorySlots[i].item;
-                        inventorySystem.RemoveItem(item);
-                        itemsSubmittedNumber++;
-                    }
-                    if(itemsSubmittedNumber == requiredItemsNumber)
-                    {
-                        return true;
-                    }
+                    foundItem = true;
+                    break;
                 }
             }
+
+            if (!foundItem)
+            {
+                Debug.Log($"Missing normal required item: {requiredItem.name}");
+                return false;
+            }
         }
+
+        // Then make sure all special items exist
+        foreach (GameObject requiredSpecialItem in requiredSpecialItems)
+        {
+            if (!HasSpecialItem(requiredSpecialItem))
+            {
+                Debug.Log($"Missing special required item: {requiredSpecialItem.name}");
+                return false;
+            }
+        }
+
+        // Only now remove the normal items
+        foreach (GameObject requiredItem in requiredItems)
+        {
+            itemsSubmitted[itemsSubmittedNumber] = requiredItem;
+            inventorySystem.RemoveItem(requiredItem);
+            itemsSubmittedNumber++;
+        }
+
+        return true;
+    }
+    public bool HasSpecialItem(GameObject requiredSpecialItem)
+    {
+        for (int i = 0; i < inventorySystem.specialInventory.Length; i++)
+        {
+            if (!inventorySystem.specialInventory[i].isEmpty &&
+                inventorySystem.specialInventory[i].item == requiredSpecialItem)
+            {
+                return true;
+            }
+        }
+
         return false;
     }
 }

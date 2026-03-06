@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float maxDistance = 10f;
     [SerializeField] private string itemTagPickup = "PuzzlePiece";
     [SerializeField] private string itemTagDeposit = "PuzzleInteractable";
+    [SerializeField] private string doorPuzzle = "Door";
     [SerializeField] private InventorySystem inventorySystem;
     [SerializeField] TempPauseMenu pauseMenu;
 
@@ -90,6 +91,17 @@ public class Player : MonoBehaviour
         if (puzzle != null)
         {
             puzzle.PuzzleSystem();
+        }
+
+
+        if (hitObj.CompareTag(doorPuzzle))
+        {
+            PuzzleSolving door = hitObj.GetComponentInParent<PuzzleSolving>();
+
+            if (door != null)
+            {
+                door.PuzzleSystem();
+            }
         }
     }
 

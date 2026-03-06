@@ -20,6 +20,7 @@ public class PuzzleSolving : MonoBehaviour
         itemsSubmittedNumber = 0;
     }
 
+    //The main puzzle logic
     public void PuzzleSystem()
     {
         if (puzzleCompleted)
@@ -43,6 +44,8 @@ public class PuzzleSolving : MonoBehaviour
             Debug.Log("Puzzle Incomplete!");
         }
     }
+
+    //Giving part of the code, can be separated (probably) as "normal" and "special"
     public void GiveSpecialItem()
     {
         if (specialItemGiven != null)
@@ -75,6 +78,8 @@ public class PuzzleSolving : MonoBehaviour
             inventorySystem.AddItem(item);
         }
     }
+
+    //A checking part of the code, checks both normal and special items, will most likely need to be optimized for better usage
     public bool CheckingRequiredItems()
     {
         itemsSubmittedNumber = 0;
@@ -84,7 +89,6 @@ public class PuzzleSolving : MonoBehaviour
             itemsSubmitted[i] = null;
         }
 
-        // First make sure all normal items exist
         foreach (GameObject requiredItem in requiredItems)
         {
             bool foundItem = false;
@@ -106,7 +110,6 @@ public class PuzzleSolving : MonoBehaviour
             }
         }
 
-        // Then make sure all special items exist
         foreach (GameObject requiredSpecialItem in requiredSpecialItems)
         {
             if (!HasSpecialItem(requiredSpecialItem))
@@ -116,7 +119,6 @@ public class PuzzleSolving : MonoBehaviour
             }
         }
 
-        // Only now remove the normal items
         foreach (GameObject requiredItem in requiredItems)
         {
             itemsSubmitted[itemsSubmittedNumber] = requiredItem;
@@ -126,6 +128,8 @@ public class PuzzleSolving : MonoBehaviour
 
         return true;
     }
+
+    //Part of checking, can be part of "special"
     public bool HasSpecialItem(GameObject requiredSpecialItem)
     {
         for (int i = 0; i < inventorySystem.specialInventory.Length; i++)

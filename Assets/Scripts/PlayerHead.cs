@@ -8,7 +8,6 @@ public class Player : MonoBehaviour
     PlayerControls plControls;
     [SerializeField] private float maxDistance = 10f;
     [SerializeField] private string itemTagPickup = "PuzzlePiece";
-    [SerializeField] private string itemTagDeposit = "PuzzleInteractable";
     [SerializeField] private string doorPuzzle = "Door";
     [SerializeField] private InventorySystem inventorySystem;
     [SerializeField] TempPauseMenu pauseMenu;

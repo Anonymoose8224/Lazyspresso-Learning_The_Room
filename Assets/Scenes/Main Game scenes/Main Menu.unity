@@ -782,6 +782,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Toy Box Scene
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c6b5c26db46ac754fbf2bbaad5d36b69, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1292180427111045606, guid: c6b5c26db46ac754fbf2bbaad5d36b69, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 

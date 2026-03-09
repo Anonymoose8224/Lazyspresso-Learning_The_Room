@@ -18,12 +18,12 @@ public class PianoBrain : MonoBehaviour
     private void Awake()
     {
         if (!IsSolved)
-            return;
+        return;
 
-        pianoControls = new PlayerControls();
-        pianoControls.Enable();
+            pianoControls = new PlayerControls();
+            pianoControls.Enable();
 
-        pianoControls.Piano.PianoButtonClick.performed += PianoKeyClick;
+            pianoControls.Piano.PianoButtonClick.performed += PianoKeyClick;
     }
 
     public void ReadNote(int note)

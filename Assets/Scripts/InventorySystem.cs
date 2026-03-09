@@ -15,6 +15,11 @@ public class InventorySystem : MonoBehaviour
         {
             inventorySlots[i] = new InventorySlot(null);
         }
+        for (int i = 0; i < specialInventorySize; i++)
+        {
+            specialInventory[i] = new InventorySlot(null);
+        }
+
     }
     public bool AddItem(GameObject itemAdded)
     {

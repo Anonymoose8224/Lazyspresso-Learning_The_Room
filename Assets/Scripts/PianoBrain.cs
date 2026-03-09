@@ -10,12 +10,16 @@ public class PianoBrain : MonoBehaviour
     [SerializeField] private PianoInteractable pianointer;
     [SerializeField] private InventorySystem inventorySystem;
     [SerializeField] GameObject PianoItem;
+    [SerializeField] public bool IsSolved = true;
 
 
     private List<int> playerComb = new List<int>();
 
     private void Awake()
     {
+        if (!IsSolved)
+            return;
+
         pianoControls = new PlayerControls();
         pianoControls.Enable();
 
@@ -38,9 +42,10 @@ public class PianoBrain : MonoBehaviour
         if (playerComb.Count == correctPswd.Count)
         {
             Debug.Log("Correct");
+            playerComb.Clear();
             pianointer.PianoExit();
-            pianointer.enabled = false;
             inventorySystem.AddItemSpecial(PianoItem);
+            IsSolved = false;
 
         }
     }
@@ -61,9 +66,5 @@ public class PianoBrain : MonoBehaviour
         
     
     }
-
-
-
-
 
 }

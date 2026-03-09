@@ -41,7 +41,6 @@ public class PianoBrain : MonoBehaviour
             pianointer.PianoExit();
             pianointer.enabled = false;
             inventorySystem.AddItemSpecial(PianoItem);
-            correctPswd.Clear();
 
         }
     }

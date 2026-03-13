@@ -8,6 +8,7 @@ public class PlayerHead : MonoBehaviour
     PlayerControls plControls;
     //[SerializeField] Baseinteractable plInteractable;
     [SerializeField] private float maxDistance = 10f;
+    [SerializeField] TempPauseMenu pauseMenu;
 
     Vector2 moveInput;
     public bool isActive = true;
@@ -19,6 +20,8 @@ public class PlayerHead : MonoBehaviour
 
         plControls.FPPlayer.Move.performed += Move;
         plControls.FPPlayer.Move.canceled += Move;
+
+        plControls.UI.Pause.performed += TogglePause;
 
         plControls.FPPlayer.Look.performed += Look;
 
@@ -33,11 +36,11 @@ public class PlayerHead : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isActive)
+        if (!isActive || pauseMenu.IsPaused() || plMove == null)
             return;
 
         plMove.Move(moveInput);
-       
+
 
     }
 
@@ -49,32 +52,47 @@ public class PlayerHead : MonoBehaviour
 
     private void Look(InputAction.CallbackContext ctx)
     {
-        if (plCam.CanLook == true)
-        {
-            Vector2 inputValues = ctx.ReadValue<Vector2>();
-            plMove.Rotate(inputValues.x);
-            plCam.Rotate(inputValues.y);
-        }
+
+        if (pauseMenu.IsPaused() || plMove == null || plCam == null )
+            return;
+
+        Vector2 inputValues = ctx.ReadValue<Vector2>();
+        plMove.Rotate(inputValues.x);
+        plCam.Rotate(inputValues.y);
+
     }
 
     private void Interact(InputAction.CallbackContext ctx)
     {
+
         Ray ray = new Ray(plCam.transform.position, plCam.transform.forward);
 
         if (Physics.Raycast(ray, out RaycastHit hit, maxDistance))
         {
             Baseinteractable interact = hit.collider.GetComponent<Baseinteractable>();
-        
-            if(interact != null)
+
+            if (interact != null)
             {
                 interact.Interact(ray, maxDistance);
+
+
             }
-        
+
         }
     }
 
-    public void OnDrawGizmos()
+    private void TogglePause(InputAction.CallbackContext ctx)
     {
-        
+        if (pauseMenu != null)
+            pauseMenu.TogglePause();
     }
+
+    private void OnDisable()
+    {
+        plControls.FPPlayer.Disable();
+        plControls.UI.Disable();
+
+    }
+
+    
 }

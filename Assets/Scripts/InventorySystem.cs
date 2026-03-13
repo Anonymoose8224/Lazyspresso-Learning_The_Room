@@ -11,19 +11,26 @@ public class InventorySystem : MonoBehaviour
     {
         inventorySlots = new InventorySlot[inventorySize];
         specialInventory = new InventorySlot[specialInventorySize];
-        for(int i = 0; i < inventorySize; i++)
+
+        for (int i = 0; i < inventorySize; i++)
         {
             inventorySlots[i] = new InventorySlot(null);
         }
+
         for (int i = 0; i < specialInventorySize; i++)
         {
             specialInventory[i] = new InventorySlot(null);
         }
-
     }
     public bool AddItem(GameObject itemAdded)
     {
-        for(int i = 0; i < inventorySlots.Length; i++)
+        if (itemAdded == null)
+        {
+            Debug.Log("Cannot add item: itemAdded is null");
+            return false;
+        }
+
+        for (int i = 0; i < inventorySlots.Length; i++)
         {
             if (inventorySlots[i].isEmpty)
             {
@@ -33,22 +40,30 @@ public class InventorySystem : MonoBehaviour
                 return true;
             }
         }
+
         Debug.Log($"Inventory is full, couldn't add {itemAdded.name}");
         return false;
     }
     public bool AddItemSpecial(GameObject itemAdded)
     {
+        if (itemAdded == null)
+        {
+            Debug.Log("Cannot add special item: itemAdded is null");
+            return false;
+        }
+
         for (int i = 0; i < specialInventory.Length; i++)
         {
             if (specialInventory[i].isEmpty)
             {
                 specialInventory[i].item = itemAdded;
                 itemAdded.SetActive(false);
-                Debug.Log($"{specialInventory[i].item.name} was added to the inventory");
+                Debug.Log($"{specialInventory[i].item.name} was added to the special inventory");
                 return true;
             }
         }
-        Debug.Log($"Inventory is full, couldn't add {itemAdded.name}");
+
+        Debug.Log($"Special inventory is full, couldn't add {itemAdded.name}");
         return false;
     }
     public bool RemoveItem(GameObject itemRemoved)
@@ -57,11 +72,13 @@ public class InventorySystem : MonoBehaviour
         {
             if (!inventorySlots[i].isEmpty && inventorySlots[i].item == itemRemoved)
             {
+                string removedItemName = inventorySlots[i].item.name;
                 inventorySlots[i].Clear();
-                Debug.Log($"{inventorySlots[i].item.name} Removed");
+                Debug.Log($"{removedItemName} Removed");
                 return true;
             }
         }
+
         Debug.Log($"{itemRemoved.name} was not found in inventory");
         return false;
     }

@@ -115,22 +115,13 @@
             ]
         },
         {
-            "name": "Piano",
-            "id": "afa32e29-e30c-4a9f-beb9-7f2e7a297ed8",
+            "name": "UI",
+            "id": "3975e1e9-72de-48ac-927d-e39465e76773",
             "actions": [
                 {
-                    "name": "PianoButtonClick",
+                    "name": "Pause",
                     "type": "Button",
-                    "id": "e357d399-dad0-4d5e-8bdf-f5551599d4e9",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "PianoExit",
-                    "type": "Button",
-                    "id": "c2a29f52-533e-4777-8d50-8b1f6ee7c244",
+                    "id": "58bfb376-e77f-4e29-9573-2fb1d0062b2d",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -140,23 +131,12 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "8270fd30-856a-41e7-9709-0094288f7ae8",
-                    "path": "<Mouse>/leftButton",
+                    "id": "eff8b3fd-9f41-4ec2-b50a-c7ef5b4fb4f3",
+                    "path": "<Keyboard>/p",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "PianoButtonClick",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a444daec-98a5-425f-a866-00a4ac10c5af",
-                    "path": "<Keyboard>/anyKey",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "PianoExit",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

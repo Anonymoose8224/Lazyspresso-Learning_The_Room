@@ -53,7 +53,7 @@ public class PlayerHead : MonoBehaviour
     private void Look(InputAction.CallbackContext ctx)
     {
 
-        if (pauseMenu.IsPaused() || plMove == null || plCam == null )
+        if (pauseMenu.IsPaused() || plMove == null || plCam == null || !plCam.CanLook)
             return;
 
         Vector2 inputValues = ctx.ReadValue<Vector2>();

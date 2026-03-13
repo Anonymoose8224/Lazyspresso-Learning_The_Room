@@ -656,6 +656,7 @@ GameObject:
   - component: {fileID: 250471072}
   - component: {fileID: 250471071}
   - component: {fileID: 250471070}
+  - component: {fileID: 250471074}
   m_Layer: 0
   m_Name: Puzzle1Piece1
   m_TagString: PuzzlePiece
@@ -756,6 +757,58 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &250471074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250471069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05d4ea3717c04f9418371275895819da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PuzzleInteractable
+  inventorySystem: {fileID: 163724441}
+--- !u!1 &266614670 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5211437233000088388, guid: 1fc3bfb5ddfb7564c9fb2ec44ffea35b, type: 3}
+  m_PrefabInstance: {fileID: 1666830932}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &266614674
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266614670}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.24, y: 0.26, z: 0.35}
+  m_Center: {x: -0.00000087764516, y: 0.00000005526241, z: 0.09934008}
+--- !u!114 &266614675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266614670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05d4ea3717c04f9418371275895819da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PuzzleInteractable
+  inventorySystem: {fileID: 163724441}
 --- !u!1 &270056781
 GameObject:
   m_ObjectHideFlags: 0
@@ -3390,6 +3443,7 @@ GameObject:
   - component: {fileID: 1128881191}
   - component: {fileID: 1128881190}
   - component: {fileID: 1128881194}
+  - component: {fileID: 1128881195}
   m_Layer: 0
   m_Name: Puzzle1Interactable
   m_TagString: PuzzleInteractable
@@ -3511,8 +3565,21 @@ MonoBehaviour:
   itemsGiven: []
   specialItemGiven: {fileID: 1568050963}
   puzzleCompleted: 0
-  door: {fileID: 0}
+  door: {fileID: 919132149343260508}
   requiredSpecialItems: []
+--- !u!114 &1128881195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128881189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 077603807239da847adcceadb89acfa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPCInteraction
+  PzSolve: {fileID: 1128881194}
 --- !u!1 &1159551152
 GameObject:
   m_ObjectHideFlags: 0
@@ -5200,7 +5267,7 @@ Transform:
   m_GameObject: {fileID: 1398982305}
   serializedVersion: 2
   m_LocalRotation: {x: -0.11602864, y: -0.7020387, z: 0.11457084, w: -0.693219}
-  m_LocalPosition: {x: -0.18151507, y: 0.10415712, z: -0.8782745}
+  m_LocalPosition: {x: -0.1941, y: 0.101, z: -0.8782745}
   m_LocalScale: {x: 0.12499777, y: 0.12340303, z: 0.11240593}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5995,7 +6062,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 753989768260782225, guid: 1fc3bfb5ddfb7564c9fb2ec44ffea35b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.01
+      value: -0.004
       objectReference: {fileID: 0}
     - target: {fileID: 753989768260782225, guid: 1fc3bfb5ddfb7564c9fb2ec44ffea35b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6052,9 +6119,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1340998421}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1fc3bfb5ddfb7564c9fb2ec44ffea35b, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 5211437233000088388, guid: 1fc3bfb5ddfb7564c9fb2ec44ffea35b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1840782592}
+      addedObject: {fileID: 266614675}
+    - targetCorrespondingSourceObject: {fileID: 5211437233000088388, guid: 1fc3bfb5ddfb7564c9fb2ec44ffea35b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 266614674}
   m_SourcePrefab: {fileID: 100100000, guid: 1fc3bfb5ddfb7564c9fb2ec44ffea35b, type: 3}
 --- !u!4 &1666830933 stripped
 Transform:
@@ -6432,27 +6502,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1fc3bfb5ddfb7564c9fb2ec44ffea35b, type: 3}
   m_PrefabInstance: {fileID: 1666830932}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &1840782592
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1840782591}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.25, y: 0.25, z: 0.25}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1868446805
 GameObject:
   m_ObjectHideFlags: 0
@@ -7446,7 +7495,7 @@ MonoBehaviour:
   - {fileID: 1274617642}
   specialItemGiven: {fileID: 0}
   puzzleCompleted: 0
-  door: {fileID: 0}
+  door: {fileID: 1293191242}
   requiredSpecialItems: []
 --- !u!65 &2130242082
 BoxCollider:
@@ -7497,6 +7546,7 @@ GameObject:
   - component: {fileID: 8950538374191970613}
   - component: {fileID: 8950538374191970614}
   - component: {fileID: 8950538374191970615}
+  - component: {fileID: 8950538374191970616}
   m_Layer: 0
   m_Name: Ring 2
   m_TagString: PuzzlePiece
@@ -7848,7 +7898,7 @@ MonoBehaviour:
   itemsGiven: []
   specialItemGiven: {fileID: 221577448}
   puzzleCompleted: 0
-  door: {fileID: 0}
+  door: {fileID: 1293191242}
   requiredSpecialItems: []
 --- !u!136 &919132148110658588
 CapsuleCollider:
@@ -8040,6 +8090,7 @@ GameObject:
   - component: {fileID: 5791412841461244367}
   - component: {fileID: 5791412841461244368}
   - component: {fileID: 5791412841461244369}
+  - component: {fileID: 5791412841461244370}
   m_Layer: 0
   m_Name: Ring 3
   m_TagString: PuzzlePiece
@@ -8140,6 +8191,7 @@ GameObject:
   - component: {fileID: 6651770788958129857}
   - component: {fileID: 7686473782731408365}
   - component: {fileID: 7686473782731408364}
+  - component: {fileID: 7686473782731408366}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -8822,6 +8874,7 @@ GameObject:
   - component: {fileID: 4685481236190040488}
   - component: {fileID: 8970547799933353131}
   - component: {fileID: 8970547799933353132}
+  - component: {fileID: 8970547799933353133}
   m_Layer: 0
   m_Name: Ring 4
   m_TagString: PuzzlePiece
@@ -8913,6 +8966,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3335442511603561631, guid: 6c0bf7f6811261a4bbf72b9afb59d017, type: 3}
+--- !u!114 &5791412841461244370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696861620802543713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05d4ea3717c04f9418371275895819da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PuzzleInteractable
+  inventorySystem: {fileID: 163724441}
 --- !u!4 &5862834486373394456
 Transform:
   m_ObjectHideFlags: 0
@@ -9072,6 +9138,7 @@ GameObject:
   - component: {fileID: 6429341605843224792}
   - component: {fileID: 6429341605843224793}
   - component: {fileID: 6429341605843224794}
+  - component: {fileID: 6429341605843224795}
   m_Layer: 0
   m_Name: Ring 1
   m_TagString: PuzzlePiece
@@ -9212,6 +9279,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5084446622711145129, guid: 6c0bf7f6811261a4bbf72b9afb59d017, type: 3}
+--- !u!114 &6429341605843224795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6216318167353864821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05d4ea3717c04f9418371275895819da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PuzzleInteractable
+  inventorySystem: {fileID: 163724441}
 --- !u!1 &6480623766088830817
 GameObject:
   m_ObjectHideFlags: 0
@@ -9569,7 +9649,7 @@ MonoBehaviour:
   itemsGiven: []
   specialItemGiven: {fileID: 1873084862}
   puzzleCompleted: 0
-  door: {fileID: 0}
+  door: {fileID: 1293191242}
   requiredSpecialItems: []
 --- !u!135 &7686473782731408365
 SphereCollider:
@@ -9592,6 +9672,19 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.037499998
   m_Center: {x: -0.59089994, y: -0.3992, z: -0.1092}
+--- !u!114 &7686473782731408366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2250638990053637033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 077603807239da847adcceadb89acfa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPCInteraction
+  PzSolve: {fileID: 7686473782731408364}
 --- !u!4 &7809969694732261355
 Transform:
   m_ObjectHideFlags: 0
@@ -10058,6 +10151,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -864259460963330315, guid: 6c0bf7f6811261a4bbf72b9afb59d017, type: 3}
+--- !u!114 &8950538374191970616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181359105583489023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05d4ea3717c04f9418371275895819da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PuzzleInteractable
+  inventorySystem: {fileID: 163724441}
 --- !u!33 &8970547799933353130
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -10101,6 +10207,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4787136918717088048, guid: 6c0bf7f6811261a4bbf72b9afb59d017, type: 3}
+--- !u!114 &8970547799933353133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5714338623042353492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05d4ea3717c04f9418371275895819da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PuzzleInteractable
+  inventorySystem: {fileID: 163724441}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

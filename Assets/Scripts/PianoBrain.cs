@@ -17,9 +17,6 @@ public class PianoBrain : MonoBehaviour
 
     private void Awake()
     {
-        if (!IsSolved)
-        return;
-
             pianoControls = new PlayerControls();
             pianoControls.Enable();
 
@@ -44,8 +41,14 @@ public class PianoBrain : MonoBehaviour
             Debug.Log("Correct");
             playerComb.Clear();
             pianointer.PianoExit();
-            inventorySystem.AddItemSpecial(PianoItem);
-            IsSolved = false;
+
+            if (IsSolved)
+            {
+                Debug.Log("Inventory item succefully added");
+                inventorySystem.AddItemSpecial(PianoItem);
+                IsSolved = false;
+            }
+;
 
         }
     }

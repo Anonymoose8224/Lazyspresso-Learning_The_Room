@@ -4,14 +4,10 @@ using UnityEngine.SceneManagement;
 public class TempPauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject pausePanel;
+    [SerializeField] private GameObject PlayerUI;
 
     private bool isPaused = false;
 
-    void Start()
-    {
-        if (pausePanel != null)
-            pausePanel.SetActive(false);
-    }
 
     public void TogglePause()
     {
@@ -23,8 +19,9 @@ public class TempPauseMenu : MonoBehaviour
 
     public void PauseGame()
     {
-        if (pausePanel != null)
             pausePanel.SetActive(true);
+         PlayerUI.SetActive(false);
+
 
         Time.timeScale = 0f;
         isPaused = true;
@@ -35,8 +32,8 @@ public class TempPauseMenu : MonoBehaviour
 
     public void ResumeGame()
     {
-        if (pausePanel != null)
             pausePanel.SetActive(false);
+        PlayerUI.SetActive(true);
 
         Time.timeScale = 1f;
         isPaused = false;
@@ -47,7 +44,7 @@ public class TempPauseMenu : MonoBehaviour
 
     public void QuitToMainMenu()
     {
-        Time.timeScale = 1f;
+        Debug.Log("Quiting to main menu!");
         SceneManager.LoadScene("Main Menu");
     }
 

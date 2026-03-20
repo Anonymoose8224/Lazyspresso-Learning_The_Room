@@ -7,35 +7,35 @@ public class TempPauseMenu : MonoBehaviour
 
     private bool isPaused = false;
 
-    void Start()
-    {
-        if (pausePanel != null)
-            pausePanel.SetActive(false);
-    }
-
     public void TogglePause()
     {
         if (isPaused)
+        {
             ResumeGame();
+            Debug.Log("Game is Resuming!");
+        }
         else
+        {
             PauseGame();
+            Debug.Log("Game is pausing!");
+
+        }
     }
 
     public void PauseGame()
     {
-        if (pausePanel != null)
-            pausePanel.SetActive(true);
+        pausePanel.SetActive(true);
 
         Time.timeScale = 0f;
         isPaused = true;
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        Debug.Log("Game is successfully paused!");
     }
 
     public void ResumeGame()
     {
-        if (pausePanel != null)
             pausePanel.SetActive(false);
 
         Time.timeScale = 1f;
@@ -43,16 +43,20 @@ public class TempPauseMenu : MonoBehaviour
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        Debug.Log("Game is successfully resumed!");
+
     }
 
     public void QuitToMainMenu()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Main Menu");
+        Debug.Log("Game is loading Main menu!");
     }
 
     public bool IsPaused()
     {
+        //Debug.Log("Game is retriving pause!");
         return isPaused;
     }
 }

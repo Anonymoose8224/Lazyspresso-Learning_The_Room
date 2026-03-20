@@ -1,19 +1,17 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Player : MonoBehaviour
+public class PlayerHead : MonoBehaviour
 {
     [SerializeField] PlayerCamera plCam;
     [SerializeField] PlayerMove plMove;
     PlayerControls plControls;
+    //[SerializeField] Baseinteractable plInteractable;
     [SerializeField] private float maxDistance = 10f;
-    [SerializeField] private string itemTagPickup = "PuzzlePiece";
-    [SerializeField] private string doorPuzzle = "Door";
-    [SerializeField] private InventorySystem inventorySystem;
     [SerializeField] TempPauseMenu pauseMenu;
 
     Vector2 moveInput;
-    bool isActive = true;
+    public bool isActive = true;
 
     private void Awake()
     {
@@ -32,7 +30,6 @@ public class Player : MonoBehaviour
         Cursor.visible = false;
 
         Cursor.lockState = CursorLockMode.Locked;
-        inventorySystem = GetComponent<InventorySystem>();
 
     }
 
@@ -43,7 +40,7 @@ public class Player : MonoBehaviour
             return;
 
         plMove.Move(moveInput);
-       
+
 
     }
 
@@ -55,64 +52,54 @@ public class Player : MonoBehaviour
 
     private void Look(InputAction.CallbackContext ctx)
     {
-        if (pauseMenu.IsPaused() || plMove == null || plCam == null)
+
+        if (pauseMenu.IsPaused() || plMove == null || plCam == null || !plCam.CanLook)
+        {
+            Debug.Log("Game is not pausing!");
             return;
+        }
 
         Vector2 inputValues = ctx.ReadValue<Vector2>();
         plMove.Rotate(inputValues.x);
         plCam.Rotate(inputValues.y);
+
     }
 
     private void Interact(InputAction.CallbackContext ctx)
     {
-        if (Camera.main == null) return;
 
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = new Ray(plCam.transform.position, plCam.transform.forward);
 
-        if (!Physics.Raycast(ray, out RaycastHit hit, maxDistance))
-            return;
-
-        GameObject hitObj = hit.collider.gameObject;
-
-        // Pickup item
-        if (hitObj.CompareTag(itemTagPickup))
+        if (Physics.Raycast(ray, out RaycastHit hit, maxDistance))
         {
-            inventorySystem.AddItem(hitObj);
-            return;
-        }
+            Baseinteractable interact = hit.collider.GetComponent<Baseinteractable>();
 
-        // Try puzzle on this object or its parent
-        PuzzleSolving puzzle = hitObj.GetComponent<PuzzleSolving>();
-
-        if (puzzle == null)
-            puzzle = hitObj.GetComponentInParent<PuzzleSolving>();
-
-        if (puzzle != null)
-        {
-            puzzle.PuzzleSystem();
-        }
-
-
-        if (hitObj.CompareTag(doorPuzzle))
-        {
-            PuzzleSolving door = hitObj.GetComponentInParent<PuzzleSolving>();
-
-            if (door != null)
+            if (interact != null)
             {
-                door.PuzzleSystem();
+                interact.Interact(ray, maxDistance);
+
+
             }
+
         }
     }
 
     private void TogglePause(InputAction.CallbackContext ctx)
     {
         if (pauseMenu != null)
+        {
             pauseMenu.TogglePause();
+            Debug.Log("Game is toggling paused!");
+
+        }
     }
 
     private void OnDisable()
     {
         plControls.FPPlayer.Disable();
         plControls.UI.Disable();
+
     }
+
+    
 }

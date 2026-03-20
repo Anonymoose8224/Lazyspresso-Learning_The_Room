@@ -14,7 +14,6 @@ public class TempPauseMenu : MonoBehaviour
     {
         if (isAble)
             return;
-
     }
 
     public void TogglePause()

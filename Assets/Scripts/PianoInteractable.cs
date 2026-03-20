@@ -15,6 +15,8 @@ public class PianoInteractable : Baseinteractable
         camshift.EnterCamShift(pianoCamPoint);
         PianoUI.SetActive(true);
         PlayerUI.SetActive(false);
+
+        //still pausing is gliching
         PauseMenu.enabled = false;
     }
 

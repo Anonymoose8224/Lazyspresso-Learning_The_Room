@@ -13,6 +13,7 @@ public class PianoKey : MonoBehaviour
         pianoBran.ReadNote(noteNbr);
         Debug.Log($"Hit {noteName} Key");
 
+        //animation still needs to be implemented
         anim.SetBool("IsClicked", true);
         anim.SetInteger("PianoKey", noteNbr);
 

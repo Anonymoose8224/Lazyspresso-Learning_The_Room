@@ -124,6 +124,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c80969772ef25cd4c89d5e28b77e665a, type: 3}
   m_PrefabInstance: {fileID: 1930954446}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &44134553 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 183466169295461159, guid: b567d7f2aa4b9b446911a8417fdffc0a, type: 3}
+  m_PrefabInstance: {fileID: 5465732142639616704}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &78530526
 GameObject:
   m_ObjectHideFlags: 0
@@ -4019,6 +4024,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
   pausePanel: {fileID: 1482614926}
+  PlayerUI: {fileID: 0}
+  isAble: 0
 --- !u!114 &1215452497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5133,6 +5140,8 @@ MonoBehaviour:
   camshift: {fileID: 686481083}
   pianoCamPoint: {fileID: 1398982306}
   PianoUI: {fileID: 334030223}
+  PlayerUI: {fileID: 44134553}
+  PauseMenu: {fileID: 1482614931}
 --- !u!1 &1482614926
 GameObject:
   m_ObjectHideFlags: 0
@@ -5249,6 +5258,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TempPauseMenu
   pausePanel: {fileID: 1482614926}
+  PlayerUI: {fileID: 44134553}
+  isAble: 0
 --- !u!1 &1525772169
 GameObject:
   m_ObjectHideFlags: 0
@@ -9237,6 +9248,10 @@ PrefabInstance:
       propertyPath: anim
       value: 
       objectReference: {fileID: 1169784647}
+    - target: {fileID: 657285155535936350, guid: ee9dc515707da9347b7602126b1f67c2, type: 3}
+      propertyPath: noteName
+      value: blue
+      objectReference: {fileID: 0}
     - target: {fileID: 1383960216558791103, guid: ee9dc515707da9347b7602126b1f67c2, type: 3}
       propertyPath: m_Controller
       value: 
@@ -9305,14 +9320,26 @@ PrefabInstance:
       propertyPath: anim
       value: 
       objectReference: {fileID: 1169784644}
+    - target: {fileID: 2822551197957703410, guid: ee9dc515707da9347b7602126b1f67c2, type: 3}
+      propertyPath: noteName
+      value: Green
+      objectReference: {fileID: 0}
     - target: {fileID: 2918962493749307346, guid: ee9dc515707da9347b7602126b1f67c2, type: 3}
       propertyPath: anim
       value: 
       objectReference: {fileID: 1169784646}
+    - target: {fileID: 2918962493749307346, guid: ee9dc515707da9347b7602126b1f67c2, type: 3}
+      propertyPath: noteName
+      value: Red
+      objectReference: {fileID: 0}
     - target: {fileID: 3375704304244164449, guid: ee9dc515707da9347b7602126b1f67c2, type: 3}
       propertyPath: anim
       value: 
       objectReference: {fileID: 1169784645}
+    - target: {fileID: 3375704304244164449, guid: ee9dc515707da9347b7602126b1f67c2, type: 3}
+      propertyPath: noteName
+      value: Yellow
+      objectReference: {fileID: 0}
     - target: {fileID: 5560223416298516358, guid: ee9dc515707da9347b7602126b1f67c2, type: 3}
       propertyPath: m_Controller
       value: 

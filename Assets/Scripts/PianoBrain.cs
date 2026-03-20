@@ -18,8 +18,9 @@ public class PianoBrain : MonoBehaviour
     {
             pianoControls = new PlayerControls();
             pianoControls.Enable();
+            playerComb.Clear();
 
-            pianoControls.Piano.PianoButtonClick.performed += PianoKeyClick;
+        pianoControls.Piano.PianoButtonClick.performed += PianoKeyClick;
     }
 
     public void ReadNote(int note)

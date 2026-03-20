@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,7 +8,14 @@ public class TempPauseMenu : MonoBehaviour
     [SerializeField] private GameObject PlayerUI;
 
     private bool isPaused = false;
+    public bool isAble = false;
 
+    private void Awake()
+    {
+        if (isAble)
+            return;
+
+    }
 
     public void TogglePause()
     {

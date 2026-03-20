@@ -54,7 +54,10 @@ public class PlayerHead : MonoBehaviour
     {
 
         if (pauseMenu.IsPaused() || plMove == null || plCam == null || !plCam.CanLook)
+        {
+            Debug.Log("Game is not pausing!");
             return;
+        }
 
         Vector2 inputValues = ctx.ReadValue<Vector2>();
         plMove.Rotate(inputValues.x);
@@ -84,7 +87,11 @@ public class PlayerHead : MonoBehaviour
     private void TogglePause(InputAction.CallbackContext ctx)
     {
         if (pauseMenu != null)
+        {
             pauseMenu.TogglePause();
+            Debug.Log("Game is toggling paused!");
+
+        }
     }
 
     private void OnDisable()

@@ -8,8 +8,7 @@ public class PianoBrain : MonoBehaviour
     [SerializeField] private PlayerControls pianoControls;
     [SerializeField] private List<int> correctPswd;
     [SerializeField] private PianoInteractable pianointer;
-    [SerializeField] private InventorySystem inventorySystem;
-    [SerializeField] GameObject PianoItem;
+    [SerializeField] private PuzzleSolving puzzSolve;
     [SerializeField] public bool IsSolved = true;
 
 
@@ -29,6 +28,7 @@ public class PianoBrain : MonoBehaviour
 
         int i = playerComb.Count - 1;
 
+
         if (correctPswd[i] != note)
         {
             Debug.Log("wrong note");
@@ -45,8 +45,9 @@ public class PianoBrain : MonoBehaviour
             if (IsSolved)
             {
                 Debug.Log("Inventory item succefully added");
-                inventorySystem.AddItemSpecial(PianoItem);
+                puzzSolve.PuzzleSystem();
                 IsSolved = false;
+
             }
 ;
 

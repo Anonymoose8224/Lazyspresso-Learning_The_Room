@@ -6,12 +6,17 @@ public class PlayerCamera : MonoBehaviour
     [SerializeField] private float minPitch = -90;
     [SerializeField] protected float maxPitch = 90;
     [SerializeField] private float currentPitch = 0;
+    [SerializeField] public bool CanLook = true;
 
     public void Rotate(float inputY)
     {
-        currentPitch -= inputY;
-        currentPitch = Mathf.Clamp(currentPitch, minPitch, maxPitch);
+        if (CanLook)
+        {
+            currentPitch -= inputY;
+            currentPitch = Mathf.Clamp(currentPitch, minPitch, maxPitch);
 
-        m_Camera.localEulerAngles = new Vector3(currentPitch, 0, 0);
+            m_Camera.localEulerAngles = new Vector3(currentPitch, 0, 0);
+        }
     }
+
 }

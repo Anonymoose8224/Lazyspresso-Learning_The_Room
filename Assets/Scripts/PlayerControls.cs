@@ -199,6 +199,62 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""UI"",
+            ""id"": ""3975e1e9-72de-48ac-927d-e39465e76773"",
+            ""actions"": [
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""58bfb376-e77f-4e29-9573-2fb1d0062b2d"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""eff8b3fd-9f41-4ec2-b50a-c7ef5b4fb4f3"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Piano"",
+            ""id"": ""69fd1990-7f48-4d60-8124-e83ed97dcf8a"",
+            ""actions"": [
+                {
+                    ""name"": ""PianoButtonClick"",
+                    ""type"": ""Button"",
+                    ""id"": ""4415fce2-a3a3-4203-b065-b1c62daa382d"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""8c72aa00-b3de-4896-ac47-0035c11b2b0f"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PianoButtonClick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -208,11 +264,19 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_FPPlayer_Move = m_FPPlayer.FindAction("Move", throwIfNotFound: true);
         m_FPPlayer_Look = m_FPPlayer.FindAction("Look", throwIfNotFound: true);
         m_FPPlayer_Interact = m_FPPlayer.FindAction("Interact", throwIfNotFound: true);
+        // UI
+        m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
+        m_UI_Pause = m_UI.FindAction("Pause", throwIfNotFound: true);
+        // Piano
+        m_Piano = asset.FindActionMap("Piano", throwIfNotFound: true);
+        m_Piano_PianoButtonClick = m_Piano.FindAction("PianoButtonClick", throwIfNotFound: true);
     }
 
     ~@PlayerControls()
     {
         UnityEngine.Debug.Assert(!m_FPPlayer.enabled, "This will cause a leak and performance issues, PlayerControls.FPPlayer.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_UI.enabled, "This will cause a leak and performance issues, PlayerControls.UI.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Piano.enabled, "This will cause a leak and performance issues, PlayerControls.Piano.Disable() has not been called.");
     }
 
     /// <summary>
@@ -402,6 +466,198 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     /// Provides a new <see cref="FPPlayerActions" /> instance referencing this action map.
     /// </summary>
     public FPPlayerActions @FPPlayer => new FPPlayerActions(this);
+
+    // UI
+    private readonly InputActionMap m_UI;
+    private List<IUIActions> m_UIActionsCallbackInterfaces = new List<IUIActions>();
+    private readonly InputAction m_UI_Pause;
+    /// <summary>
+    /// Provides access to input actions defined in input action map "UI".
+    /// </summary>
+    public struct UIActions
+    {
+        private @PlayerControls m_Wrapper;
+
+        /// <summary>
+        /// Construct a new instance of the input action map wrapper class.
+        /// </summary>
+        public UIActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        /// <summary>
+        /// Provides access to the underlying input action "UI/Pause".
+        /// </summary>
+        public InputAction @Pause => m_Wrapper.m_UI_Pause;
+        /// <summary>
+        /// Provides access to the underlying input action map instance.
+        /// </summary>
+        public InputActionMap Get() { return m_Wrapper.m_UI; }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+        public void Enable() { Get().Enable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+        public void Disable() { Get().Disable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+        public bool enabled => Get().enabled;
+        /// <summary>
+        /// Implicitly converts an <see ref="UIActions" /> to an <see ref="InputActionMap" /> instance.
+        /// </summary>
+        public static implicit operator InputActionMap(UIActions set) { return set.Get(); }
+        /// <summary>
+        /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <param name="instance">Callback instance.</param>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+        /// </remarks>
+        /// <seealso cref="UIActions" />
+        public void AddCallbacks(IUIActions instance)
+        {
+            if (instance == null || m_Wrapper.m_UIActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_UIActionsCallbackInterfaces.Add(instance);
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
+        }
+
+        /// <summary>
+        /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <remarks>
+        /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+        /// </remarks>
+        /// <seealso cref="UIActions" />
+        private void UnregisterCallbacks(IUIActions instance)
+        {
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
+        }
+
+        /// <summary>
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="UIActions.UnregisterCallbacks(IUIActions)" />.
+        /// </summary>
+        /// <seealso cref="UIActions.UnregisterCallbacks(IUIActions)" />
+        public void RemoveCallbacks(IUIActions instance)
+        {
+            if (m_Wrapper.m_UIActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        /// <summary>
+        /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+        /// </summary>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+        /// </remarks>
+        /// <seealso cref="UIActions.AddCallbacks(IUIActions)" />
+        /// <seealso cref="UIActions.RemoveCallbacks(IUIActions)" />
+        /// <seealso cref="UIActions.UnregisterCallbacks(IUIActions)" />
+        public void SetCallbacks(IUIActions instance)
+        {
+            foreach (var item in m_Wrapper.m_UIActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_UIActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    /// <summary>
+    /// Provides a new <see cref="UIActions" /> instance referencing this action map.
+    /// </summary>
+    public UIActions @UI => new UIActions(this);
+
+    // Piano
+    private readonly InputActionMap m_Piano;
+    private List<IPianoActions> m_PianoActionsCallbackInterfaces = new List<IPianoActions>();
+    private readonly InputAction m_Piano_PianoButtonClick;
+    /// <summary>
+    /// Provides access to input actions defined in input action map "Piano".
+    /// </summary>
+    public struct PianoActions
+    {
+        private @PlayerControls m_Wrapper;
+
+        /// <summary>
+        /// Construct a new instance of the input action map wrapper class.
+        /// </summary>
+        public PianoActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        /// <summary>
+        /// Provides access to the underlying input action "Piano/PianoButtonClick".
+        /// </summary>
+        public InputAction @PianoButtonClick => m_Wrapper.m_Piano_PianoButtonClick;
+        /// <summary>
+        /// Provides access to the underlying input action map instance.
+        /// </summary>
+        public InputActionMap Get() { return m_Wrapper.m_Piano; }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+        public void Enable() { Get().Enable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+        public void Disable() { Get().Disable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+        public bool enabled => Get().enabled;
+        /// <summary>
+        /// Implicitly converts an <see ref="PianoActions" /> to an <see ref="InputActionMap" /> instance.
+        /// </summary>
+        public static implicit operator InputActionMap(PianoActions set) { return set.Get(); }
+        /// <summary>
+        /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <param name="instance">Callback instance.</param>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+        /// </remarks>
+        /// <seealso cref="PianoActions" />
+        public void AddCallbacks(IPianoActions instance)
+        {
+            if (instance == null || m_Wrapper.m_PianoActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_PianoActionsCallbackInterfaces.Add(instance);
+            @PianoButtonClick.started += instance.OnPianoButtonClick;
+            @PianoButtonClick.performed += instance.OnPianoButtonClick;
+            @PianoButtonClick.canceled += instance.OnPianoButtonClick;
+        }
+
+        /// <summary>
+        /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <remarks>
+        /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+        /// </remarks>
+        /// <seealso cref="PianoActions" />
+        private void UnregisterCallbacks(IPianoActions instance)
+        {
+            @PianoButtonClick.started -= instance.OnPianoButtonClick;
+            @PianoButtonClick.performed -= instance.OnPianoButtonClick;
+            @PianoButtonClick.canceled -= instance.OnPianoButtonClick;
+        }
+
+        /// <summary>
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="PianoActions.UnregisterCallbacks(IPianoActions)" />.
+        /// </summary>
+        /// <seealso cref="PianoActions.UnregisterCallbacks(IPianoActions)" />
+        public void RemoveCallbacks(IPianoActions instance)
+        {
+            if (m_Wrapper.m_PianoActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        /// <summary>
+        /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+        /// </summary>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+        /// </remarks>
+        /// <seealso cref="PianoActions.AddCallbacks(IPianoActions)" />
+        /// <seealso cref="PianoActions.RemoveCallbacks(IPianoActions)" />
+        /// <seealso cref="PianoActions.UnregisterCallbacks(IPianoActions)" />
+        public void SetCallbacks(IPianoActions instance)
+        {
+            foreach (var item in m_Wrapper.m_PianoActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_PianoActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    /// <summary>
+    /// Provides a new <see cref="PianoActions" /> instance referencing this action map.
+    /// </summary>
+    public PianoActions @Piano => new PianoActions(this);
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "FPPlayer" which allows adding and removing callbacks.
     /// </summary>
@@ -430,5 +686,35 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnInteract(InputAction.CallbackContext context);
+    }
+    /// <summary>
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.
+    /// </summary>
+    /// <seealso cref="UIActions.AddCallbacks(IUIActions)" />
+    /// <seealso cref="UIActions.RemoveCallbacks(IUIActions)" />
+    public interface IUIActions
+    {
+        /// <summary>
+        /// Method invoked when associated input action "Pause" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnPause(InputAction.CallbackContext context);
+    }
+    /// <summary>
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Piano" which allows adding and removing callbacks.
+    /// </summary>
+    /// <seealso cref="PianoActions.AddCallbacks(IPianoActions)" />
+    /// <seealso cref="PianoActions.RemoveCallbacks(IPianoActions)" />
+    public interface IPianoActions
+    {
+        /// <summary>
+        /// Method invoked when associated input action "PianoButtonClick" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnPianoButtonClick(InputAction.CallbackContext context);
     }
 }

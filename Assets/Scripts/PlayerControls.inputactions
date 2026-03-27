@@ -113,6 +113,62 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "UI",
+            "id": "3975e1e9-72de-48ac-927d-e39465e76773",
+            "actions": [
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "58bfb376-e77f-4e29-9573-2fb1d0062b2d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "eff8b3fd-9f41-4ec2-b50a-c7ef5b4fb4f3",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Piano",
+            "id": "69fd1990-7f48-4d60-8124-e83ed97dcf8a",
+            "actions": [
+                {
+                    "name": "PianoButtonClick",
+                    "type": "Button",
+                    "id": "4415fce2-a3a3-4203-b065-b1c62daa382d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8c72aa00-b3de-4896-ac47-0035c11b2b0f",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PianoButtonClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

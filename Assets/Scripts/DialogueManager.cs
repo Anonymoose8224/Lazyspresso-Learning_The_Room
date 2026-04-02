@@ -1,14 +1,20 @@
 using UnityEngine;
+using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    [SerializeField] private DialogueSystem[] dialogues;
+    public GameObject dialogueBox;
+    public TextMeshProUGUI NpcName;
+    public TextMeshProUGUI dialogueText;
+
     void Start()
     {
-        
+        //change text to be =  dialogues[0].dialogue[0]
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         

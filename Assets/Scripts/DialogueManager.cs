@@ -6,8 +6,39 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] private DialogueSystem[] dialogues;
     public GameObject dialogueBox;
-    public TextMeshProUGUI NpcName;
+    public TextMeshProUGUI npcName;
     public TextMeshProUGUI dialogueText;
+
+    public DialogueSystem currentSystem;
+
+    private int index;
+
+    public void StartDialogue(DialogueSystem system)
+    {
+        dialogueBox.SetActive(true);
+        currentSystem = system;
+
+        npcName.text = currentSystem.npcName;
+
+        dialogueText.text = currentSystem.lines[index];
+    }
+
+    public void NextDialogue()
+    {
+        index++;
+
+        if (index < currentSystem.lines.Length) 
+
+        dialogueText.text = currentSystem.lines[index];
+
+        else EndDialogue();
+    }
+
+    public void EndDialogue()
+    {
+        dialogueBox.SetActive(false);
+        currentSystem = null;
+    }
 
     void Start()
     {

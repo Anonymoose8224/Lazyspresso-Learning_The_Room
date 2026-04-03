@@ -1150,7 +1150,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &231686646
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3079,9 +3079,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
   dialogues: []
-  dialogueBox: {fileID: 0}
-  NpcName: {fileID: 0}
-  dialogueText: {fileID: 0}
+  dialogueBox: {fileID: 231686645}
+  npcName: {fileID: 502466986}
+  dialogueText: {fileID: 1076815733}
+  currentSystem: {fileID: 0}
 --- !u!1 &674387415
 GameObject:
   m_ObjectHideFlags: 0
@@ -8535,6 +8536,7 @@ GameObject:
   - component: {fileID: 919132148110658586}
   - component: {fileID: 919132148110658587}
   - component: {fileID: 919132148110658588}
+  - component: {fileID: 919132148110658589}
   m_Layer: 0
   m_Name: Fox
   m_TagString: PuzzleInteractable
@@ -8605,6 +8607,19 @@ CapsuleCollider:
   m_Height: 4.982584
   m_Direction: 1
   m_Center: {x: 0.114935726, y: -0.092615284, z: 2.962488e-11}
+--- !u!114 &919132148110658589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148110658585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17afc7a5ee9788a4998c6efd0cbd16d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
+  mySystem: {fileID: 0}
 --- !u!1 &919132149332012211
 GameObject:
   m_ObjectHideFlags: 0

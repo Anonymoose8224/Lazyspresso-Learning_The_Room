@@ -8,11 +8,13 @@ public class DialogueSystem : ScriptableObject
 
     public string randomNPCName;
     public Sprite randomNPCPortrait;
-    
+
 
     [Header("Dialogue")]
     [TextArea]
-    public string[] dialogue;
+
+    public string npcName;
+    public string[] lines;
 
     public string[] optionText;
 

@@ -9,7 +9,7 @@ public class PianoBrain : MonoBehaviour
     [SerializeField] private List<int> correctPswd;
     [SerializeField] private PianoInteractable pianointer;
     [SerializeField] private PuzzleSolving puzzSolve;
-    [SerializeField] public bool IsSolved = true;
+    [SerializeField] public bool hasGivenReward = false;
 
 
     private List<int> playerComb = new List<int>();
@@ -43,11 +43,11 @@ public class PianoBrain : MonoBehaviour
             playerComb.Clear();
             pianointer.PianoExit();
 
-            if (IsSolved)
+            if (!hasGivenReward)
             {
-                Debug.Log("Inventory item succefully added");
+                Debug.Log("Inventory item successfully added");
                 puzzSolve.PuzzleSystem();
-                IsSolved = false;
+                hasGivenReward = true;
 
             }
 ;

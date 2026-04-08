@@ -16,7 +16,7 @@ public class PianoKey : MonoBehaviour
         anim.SetBool("IsClicked", true);
         anim.SetInteger("PianoKey", noteNbr);
 
-    } 
+    }
 
-
+    //Add a way that repeat note animation, speed up animation and add sound
 }

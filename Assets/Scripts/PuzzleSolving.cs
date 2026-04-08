@@ -35,14 +35,15 @@ public class PuzzleSolving : MonoBehaviour
             Debug.Log("Puzzle Complete!");
             GiveItemToPlayer();
             GiveSpecialItem();
-
+            
             //Disables the door is door (Will need to be changed eventually)
-            door.SetActive(false);
+            //door.SetActive(false);
         }
         else
         {
             Debug.Log("Puzzle Incomplete!");
         }
+
     }
 
     //Giving part of the code, can be separated (probably) as "normal" and "special"
@@ -50,7 +51,17 @@ public class PuzzleSolving : MonoBehaviour
     {
         if (specialItemGiven != null)
         {
-            inventorySystem.AddItemSpecial(specialItemGiven);
+            if (specialItemGiven.CompareTag("SpecialItem"))
+                inventorySystem.AddItemSpecial(specialItemGiven);
+
+            else
+                inventorySystem.AddItem(specialItemGiven);
+        }
+
+        if (inventorySystem.IsFull() || door.CompareTag("Door"))
+        {
+            Debug.Log($"{door} Is Open");
+            door.SetActive(false);
         }
     }
     public void GiveItemToPlayer()

@@ -14,6 +14,7 @@ public class TempPauseMenu : MonoBehaviour
     {
         if (isAble)
             return;
+
     }
 
     public void TogglePause()
@@ -53,6 +54,7 @@ public class TempPauseMenu : MonoBehaviour
     {
         Debug.Log("Quiting to main menu!");
         SceneManager.LoadScene("Main Menu");
+        isPaused = false;
     }
 
     public bool IsPaused()

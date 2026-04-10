@@ -89,8 +89,8 @@ public class PlayerHead : MonoBehaviour
 
     private void OnDisable()
     {
-        plControls.FPPlayer.Disable();
-        plControls.UI.Disable();
+        plControls?.FPPlayer.Disable();
+        plControls?.UI.Disable();
 
     }
 

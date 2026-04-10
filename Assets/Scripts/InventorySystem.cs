@@ -6,6 +6,7 @@ public class InventorySystem : MonoBehaviour
     public const int specialInventorySize = 4;
     public InventorySlot[] inventorySlots;
     public InventorySlot[] specialInventory;
+    [SerializeField] private int count;
 
     private void Awake()
     {
@@ -82,6 +83,22 @@ public class InventorySystem : MonoBehaviour
         Debug.Log($"{itemRemoved.name} was not found in inventory");
         return false;
     }
+
+    public bool IsFull() 
+    {
+        foreach (InventorySlot item in specialInventory)
+        {
+            if (item.isEmpty)
+            {
+                Debug.Log("Its not full");
+                return false;
+            }
+        }
+
+        Debug.Log("It is Full");
+        return true;
+    }
+
     private void OnDrawGizmos()
     {
         if (!Application.isPlaying)

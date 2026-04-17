@@ -9,6 +9,7 @@ public class PlayerHead : MonoBehaviour
     //[SerializeField] Baseinteractable plInteractable;
     [SerializeField] private float maxDistance = 10f;
     [SerializeField] TempPauseMenu pauseMenu;
+    [SerializeField] Ending endings;
 
     Vector2 moveInput;
     public bool isActive = true;
@@ -36,7 +37,7 @@ public class PlayerHead : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isActive || pauseMenu.IsPaused() || plMove == null)
+        if (!isActive || pauseMenu.IsPaused() || endings.IsWon == true || plMove == null)
             return;
 
         plMove.Move(moveInput);
@@ -53,7 +54,7 @@ public class PlayerHead : MonoBehaviour
     private void Look(InputAction.CallbackContext ctx)
     {
 
-        if (pauseMenu.IsPaused() || plMove == null || plCam == null || !plCam.CanLook)
+        if (pauseMenu.IsPaused() || endings.IsWon == true || plMove == null || plCam == null || !plCam.CanLook)
             return;
 
         Vector2 inputValues = ctx.ReadValue<Vector2>();

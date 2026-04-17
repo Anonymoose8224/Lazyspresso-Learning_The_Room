@@ -6,6 +6,7 @@ public class TempPauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject PlayerUI;
+    [SerializeField] private Ending endingS;
 
     private bool isPaused = false;
     public bool isAble = false;
@@ -27,7 +28,7 @@ public class TempPauseMenu : MonoBehaviour
 
     public void PauseGame()
     {
-            pausePanel.SetActive(true);
+         pausePanel.SetActive(true);
          PlayerUI.SetActive(false);
 
 
@@ -40,7 +41,7 @@ public class TempPauseMenu : MonoBehaviour
 
     public void ResumeGame()
     {
-            pausePanel.SetActive(false);
+        pausePanel.SetActive(false);
         PlayerUI.SetActive(true);
 
         Time.timeScale = 1f;
@@ -52,9 +53,21 @@ public class TempPauseMenu : MonoBehaviour
 
     public void QuitToMainMenu()
     {
+        isPaused = false;
+        endingS.IsWon = false;
+        Time.timeScale = 1f;
         Debug.Log("Quiting to main menu!");
         SceneManager.LoadScene("Main Menu");
+
+    }
+
+    public void Restart()
+    {
         isPaused = false;
+        endingS.IsWon = false;
+        Time.timeScale = 1f;
+        Debug.Log("Restarting the Game!");
+        SceneManager.LoadScene("GameScene");
     }
 
     public bool IsPaused()

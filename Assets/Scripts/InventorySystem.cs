@@ -7,6 +7,7 @@ public class InventorySystem : MonoBehaviour
     public InventorySlot[] inventorySlots;
     public InventorySlot[] specialInventory;
     [SerializeField] private int count;
+    [SerializeField] private InventoryUI inventoryUI;
 
     private void Awake()
     {
@@ -23,6 +24,10 @@ public class InventorySystem : MonoBehaviour
             specialInventory[i] = new InventorySlot(null);
         }
     }
+    private void Start()
+    {
+        inventoryUI.RefreshUI();
+    }
     public bool AddItem(GameObject itemAdded)
     {
         if (itemAdded == null)
@@ -38,6 +43,7 @@ public class InventorySystem : MonoBehaviour
                 inventorySlots[i].item = itemAdded;
                 itemAdded.SetActive(false);
                 Debug.Log($"{inventorySlots[i].item.name} was added to the inventory");
+                inventoryUI.RefreshUI();
                 return true;
             }
         }
@@ -60,6 +66,7 @@ public class InventorySystem : MonoBehaviour
                 specialInventory[i].item = itemAdded;
                 itemAdded.SetActive(false);
                 Debug.Log($"{specialInventory[i].item.name} was added to the special inventory");
+                inventoryUI.RefreshUI();
                 return true;
             }
         }
@@ -76,6 +83,7 @@ public class InventorySystem : MonoBehaviour
                 string removedItemName = inventorySlots[i].item.name;
                 inventorySlots[i].Clear();
                 Debug.Log($"{removedItemName} Removed");
+                inventoryUI.RefreshUI();
                 return true;
             }
         }

@@ -13,17 +13,11 @@ public class PuzzleSolving : MonoBehaviour
     [SerializeField] private bool puzzleCompleted = false;
     [SerializeField] private GameObject door;
     [SerializeField] private List<GameObject> requiredSpecialItems;
-    [SerializeField] private bool hasAnimation;
-    [SerializeField] private Animation clip;
     private void Awake()
     {
         requiredItemsNumber = requiredItems.Count;
         itemsSubmitted = new GameObject[requiredItemsNumber];
         itemsSubmittedNumber = 0;
-    }
-    private void Start()
-    {
-        clip = GetComponent<Animation>();
     }
 
     //The main puzzle logic
@@ -39,10 +33,6 @@ public class PuzzleSolving : MonoBehaviour
         {
             puzzleCompleted = true;
             Debug.Log("Puzzle Complete!");
-            if(hasAnimation == true && puzzleCompleted == true)
-            {
-                clip.Play("CompletedCaterpillarPuzzle");
-            }
             GiveItemToPlayer();
             GiveSpecialItem();
             

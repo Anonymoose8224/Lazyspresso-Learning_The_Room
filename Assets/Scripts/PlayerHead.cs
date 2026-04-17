@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -27,9 +28,16 @@ public class PlayerHead : MonoBehaviour
 
         plControls.FPPlayer.Interact.performed += Interact;
 
+        plControls.FPPlayer.Throw.performed += Throw;
+
         Cursor.visible = false;
 
         Cursor.lockState = CursorLockMode.Locked;
+
+    }
+
+    private void Throw(InputAction.CallbackContext context)
+    {
 
     }
 

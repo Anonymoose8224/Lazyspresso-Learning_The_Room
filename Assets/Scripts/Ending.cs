@@ -10,15 +10,16 @@ public class Ending : MonoBehaviour
     [SerializeField] private GameObject WinnerPanel;
     [SerializeField] private GameObject PlayerUI;
 
-    public bool IsWon = false;
+    public bool IsWon;
 
     private void OnTriggerEnter(Collider other)
     {
+        IsWon = true;
+
         WinnerPanel.SetActive(true);
         PlayerUI.SetActive(false);
 
         Time.timeScale = 0f;
-        IsWon = true;
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -36,6 +37,7 @@ public class Ending : MonoBehaviour
 
     public bool IsTheWinner()
     {
+        Debug.Log($"Returning {IsWon} as IsWon");
         return IsWon;
     }
 }

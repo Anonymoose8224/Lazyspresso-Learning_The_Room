@@ -9,14 +9,6 @@ public class TempPauseMenu : MonoBehaviour
     [SerializeField] private Ending endingS;
 
     private bool isPaused = false;
-    public bool isAble = false;
-
-    private void Awake()
-    {
-        if (isAble)
-            return;
-
-    }
 
     public void TogglePause()
     {

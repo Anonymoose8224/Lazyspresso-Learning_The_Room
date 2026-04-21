@@ -4308,7 +4308,7 @@ GameObject:
   - component: {fileID: 332391913}
   - component: {fileID: 332391912}
   m_Layer: 0
-  m_Name: Trigger area for Fail
+  m_Name: TriggerAreaForFail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6221,7 +6221,7 @@ GameObject:
   - component: {fileID: 686089546}
   - component: {fileID: 686089545}
   m_Layer: 0
-  m_Name: Trigger area for Complete
+  m_Name: TriggerAreaForComplete
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6414,7 +6414,7 @@ GameObject:
   - component: {fileID: 713171542}
   - component: {fileID: 713171549}
   m_Layer: 0
-  m_Name: Hand_RingGreen
+  m_Name: RingGreen
   m_TagString: PuzzlePiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6597,6 +6597,8 @@ MonoBehaviour:
   pushForce: 5
   startPosition: {x: 0, y: 0, z: 0}
   thrown: 0
+  inventorySystem: {fileID: 0}
+  throwable: 0
 --- !u!1001 &731836689
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8559,8 +8561,6 @@ MonoBehaviour:
   puzzleCompleted: 0
   door: {fileID: 1155298510520770784}
   requiredSpecialItems: []
-  hasAnimation: 0
-  clip: {fileID: 0}
 --- !u!114 &1128881195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8592,7 +8592,7 @@ GameObject:
   - component: {fileID: 1146144718}
   - component: {fileID: 1146144725}
   m_Layer: 0
-  m_Name: Hand_RingRed
+  m_Name: RingRed
   m_TagString: PuzzlePiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8775,6 +8775,8 @@ MonoBehaviour:
   pushForce: 5
   startPosition: {x: 0, y: 0, z: 0}
   thrown: 0
+  inventorySystem: {fileID: 0}
+  throwable: 0
 --- !u!1 &1159551152
 GameObject:
   m_ObjectHideFlags: 0
@@ -11662,7 +11664,7 @@ GameObject:
   - component: {fileID: 1601876625}
   - component: {fileID: 1601876632}
   m_Layer: 0
-  m_Name: Hand_RingYellow
+  m_Name: RingYellow
   m_TagString: PuzzlePiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11845,6 +11847,8 @@ MonoBehaviour:
   pushForce: 5
   startPosition: {x: 0, y: 0, z: 0}
   thrown: 0
+  inventorySystem: {fileID: 0}
+  throwable: 0
 --- !u!114 &1621426465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12367,7 +12371,7 @@ GameObject:
   - component: {fileID: 1791502657}
   - component: {fileID: 1791502656}
   m_Layer: 0
-  m_Name: Trigger area for Hand
+  m_Name: TriggerAreaForHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12654,7 +12658,7 @@ GameObject:
   - component: {fileID: 1842623908}
   - component: {fileID: 1842623915}
   m_Layer: 0
-  m_Name: Hand_RingBlue
+  m_Name: RingBlue
   m_TagString: PuzzlePiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12837,6 +12841,8 @@ MonoBehaviour:
   pushForce: 5
   startPosition: {x: 0, y: 0, z: 0}
   thrown: 0
+  inventorySystem: {fileID: 0}
+  throwable: 0
 --- !u!1 &1868446805
 GameObject:
   m_ObjectHideFlags: 0
@@ -14210,8 +14216,6 @@ MonoBehaviour:
   puzzleCompleted: 0
   door: {fileID: 1799480694}
   requiredSpecialItems: []
-  hasAnimation: 0
-  clip: {fileID: 0}
 --- !u!65 &2130242082
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14658,8 +14662,6 @@ MonoBehaviour:
   puzzleCompleted: 0
   door: {fileID: 2042326793}
   requiredSpecialItems: []
-  hasAnimation: 0
-  clip: {fileID: 0}
 --- !u!136 &919132148110658588
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -16967,8 +16969,6 @@ MonoBehaviour:
   puzzleCompleted: 0
   door: {fileID: 2042326793}
   requiredSpecialItems: []
-  hasAnimation: 1
-  clip: {fileID: 0}
 --- !u!135 &7686473782731408365
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -9,8 +9,8 @@ public class RingPuzzleData : MonoBehaviour, IThrowable
     [SerializeField] private bool thrown = false;
     [SerializeField] private InventorySystem inventorySystem;
     [SerializeField] private bool throwable = false;
-
-    private void Awake()
+    public event Action<bool> onReachedArea;
+     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         this.gameObject.transform.position = startPosition;
@@ -53,6 +53,7 @@ public class RingPuzzleData : MonoBehaviour, IThrowable
             Debug.Log("Got ring in success area! Destroying the ring and showing the success ring!");
             thrown = false;
             rb.useGravity = false;
+            onReachedArea?.Invoke(true);
             Destroy(this.gameObject);
         }
     }

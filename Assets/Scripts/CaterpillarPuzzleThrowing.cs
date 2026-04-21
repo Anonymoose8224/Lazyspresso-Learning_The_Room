@@ -6,26 +6,80 @@ public class CaterpillarPuzzleThrowing : MonoBehaviour
     [SerializeField] private GameObject[] rings;
     [SerializeField] private GameObject startingRing;
     [SerializeField] private int counter = 0;
+    [SerializeField] private InventorySystem inventorySystem;
+    [SerializeField] private RingPuzzleData[] switchingRings;
+    [SerializeField] private bool inThrowingArea;
 
-    [SerializeField] private RingPuzzleData switchingRings;
-
-    private void Awake()
-    {
-        counter = 0;
-        rings = new GameObject[4];
-        startingRing = rings[0];
-    }
     private void Start()
     {
-        switchingRings.onReachedArea += SwitchRings;
+        inThrowingArea = false;
+        counter = 0;
+        for (int i = 0; i < 4; i++)
+        {
+            switchingRings[i].onReachedArea += SwitchRings;
+        }
+        startingRing = rings[0];
     }
 
-    private void SwitchRings(bool reached)
+    public void SwitchRings(bool reached)
     {
         if(reached == true)
         {
             counter++;
             startingRing = rings[counter];
+            ShowRing();
+        }
+    }
+    public void ShowRing()
+    {
+        Debug.Log("Entered Caterpillar Game with the ring in inventory, showing in hand!");
+        startingRing.SetActive(true);
+        RingPuzzleData currentRing = startingRing.GetComponent<RingPuzzleData>();
+        currentRing.ResetPosition();
+
+    }
+    public void HideRing()
+    {
+        Debug.Log("Exited Caterpillar Game with the ring in inventory, hiding in hand!");
+        startingRing.SetActive(false);
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "TriggerAreaForHand")
+        {
+            for (int i = 0; i < inventorySystem.inventorySlots.Length; i++)
+            {
+                if (startingRing.name == inventorySystem.inventorySlots[i].item.name)
+                {
+                    inThrowingArea = true;
+                    Debug.Log("Ring in inventory, showing it");
+                    ShowRing();
+                }
+                else
+                {
+                    Debug.Log("Ring not in inventory");
+                }
+            }
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.name == "TriggerAreaForHand")
+        {
+            HideRing();
+        }
+    }
+    public void ThrowRing()
+    {
+        if(inThrowingArea == true)
+        {
+            Debug.Log("In throwable area!");
+            RingPuzzleData currentRing = startingRing.GetComponent<RingPuzzleData>();
+            currentRing.RingThrown();
+        }
+        else
+        {
+            Debug.Log("Not in throwable area!");
         }
     }
 }

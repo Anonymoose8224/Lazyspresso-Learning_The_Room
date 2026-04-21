@@ -1,39 +1,37 @@
 using System;
+using System.Dynamic;
 using UnityEngine;
 
 public class RingPuzzleData : MonoBehaviour, IThrowable
 {
     [SerializeField] private Rigidbody rb;
-    [SerializeField] private float pushForce = 5f;
+    [SerializeField] private float pushForceForward = 300f;
+    [SerializeField] private float pushForceUpwards = 100f;
     [SerializeField] private Vector3 startPosition = Vector3.zero;
     [SerializeField] private bool thrown = false;
-    [SerializeField] private InventorySystem inventorySystem;
-    [SerializeField] private bool throwable = false;
+    [SerializeField] private MeshCollider mc;
+    [SerializeField] private GameObject completedRing;
     public event Action<bool> onReachedArea;
      private void Awake()
     {
+        completedRing.SetActive(false);
+        mc = GetComponent<MeshCollider>();
+        mc.enabled = false;
         rb = GetComponent<Rigidbody>();
-        this.gameObject.transform.position = startPosition;
+        this.gameObject.transform.localPosition = startPosition;
         rb.useGravity = false;
         this.gameObject.SetActive(false);
-    }
-    public void ShowRing()
-    {
-        Debug.Log("Entered Caterpillar Game with the ring in inventory, showing in hand!");
-        this.gameObject.SetActive (true);
-    }
-    public void HideRing()
-    {
-        Debug.Log("Exited Caterpillar Game with the ring in inventory, hiding in hand!");
-        this.gameObject.SetActive (false);
     }
 
     public void RingThrown()
     {
+        ResetPosition();
+        mc.enabled = true;
         Debug.Log("Thrown the ring!");
         thrown = true;
         rb.useGravity = true;
-        rb.AddForce(Vector3.forward * pushForce);
+        rb.AddRelativeForce(Vector3.forward * pushForceForward);
+        rb.AddForce(Vector3.up * pushForceUpwards);
     }
 
     public void FailThrow()
@@ -43,13 +41,18 @@ public class RingPuzzleData : MonoBehaviour, IThrowable
             Debug.Log("Failed to get ring in success area! Returning to hand!");
             thrown = false;
             rb.useGravity = false;
-            this.gameObject.transform.position = startPosition;
+            rb.angularVelocity = Vector3.zero;
+            mc.enabled = false;
+            ResetPosition();
         }
+        ResetPosition();
     }
     public void SuccessThrow()
     {
         if(thrown == true)
         {
+            completedRing.SetActive(true);
+            mc.enabled = false;
             Debug.Log("Got ring in success area! Destroying the ring and showing the success ring!");
             thrown = false;
             rb.useGravity = false;
@@ -57,33 +60,20 @@ public class RingPuzzleData : MonoBehaviour, IThrowable
             Destroy(this.gameObject);
         }
     }
-
+    public void ResetPosition()
+    {
+        this.gameObject.transform.localPosition = startPosition;
+    }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "TriggerAreaForHand")
-        {
-            for (int i = 0; i < inventorySystem.inventorySlots.Length; i++)
-            {
-                if (this.gameObject.name == inventorySystem.inventorySlots[i].item.name)
-                {
-                    ShowRing();
-                }
-            }
-        }
-        else if (other.gameObject.name == "TriggerAreaForComplete")
+        if (other.gameObject.name == "TriggerAreaForComplete")
         {
             SuccessThrow();
         }
         else if (other.gameObject.name == "TriggerAreaForFail")
         {
+            ResetPosition();
             FailThrow();
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.name == "TriggerAreaForHand")
-        {
-            HideRing();
         }
     }
 }

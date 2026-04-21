@@ -10,6 +10,7 @@ public class PlayerHead : MonoBehaviour
     //[SerializeField] Baseinteractable plInteractable;
     [SerializeField] private float maxDistance = 10f;
     [SerializeField] TempPauseMenu pauseMenu;
+    [SerializeField] private CaterpillarPuzzleThrowing caterpillarPuzzle;
 
     Vector2 moveInput;
     public bool isActive = true;
@@ -36,9 +37,9 @@ public class PlayerHead : MonoBehaviour
 
     }
 
-    private void Throw(InputAction.CallbackContext context)
+    private void Throw(InputAction.CallbackContext ctx)
     {
-
+        caterpillarPuzzle.ThrowRing();
     }
 
     // Update is called once per frame

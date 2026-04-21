@@ -15,7 +15,8 @@ MonoBehaviour:
   characters: 04000000
   randomNPCName: 
   randomNPCPortrait: {fileID: 0}
-  dialogue:
+  npcName: 
+  lines:
   - You finished all the games.
   optionText: []
   option0: {fileID: 0}

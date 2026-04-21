@@ -11,9 +11,11 @@ public class DialogueSystem : ScriptableObject
 
 
     [Header("Dialogue")]
-    [TextArea]
+    
 
     public string npcName;
+
+    [TextArea]
     public string[] lines;
 
     public string[] optionText;

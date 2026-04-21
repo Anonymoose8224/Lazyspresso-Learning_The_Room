@@ -15,17 +15,16 @@ MonoBehaviour:
   characters: 0500000002000000020000000200000002000000020000000200000002000000
   randomNPCName: 
   randomNPCPortrait: {fileID: 0}
-  dialogue:
+  npcName: 
+  lines:
   - Here's my drawing!
   - Way to go my little artist!
-  - 'I hope she comes to see the drawing.
-
-'
-  - She hasn't come here in a while...
+  - 'I hope she comes to see the drawing. '
+  - She hasn't come here in a while.
   - She was so nice
-  - Then the Black Thing came...
-  - She wants to come back to see the drawing
-  - Like she used to...
+  - Then the black thing came.
+  - She wants to come back.
+  - To see the drawing, like she used to...
   optionText: []
   option0: {fileID: 0}
   option1: {fileID: 0}

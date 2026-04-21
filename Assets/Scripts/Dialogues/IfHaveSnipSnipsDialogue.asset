@@ -15,13 +15,12 @@ MonoBehaviour:
   characters: 05000000000000000000000000000000
   randomNPCName: 
   randomNPCPortrait: {fileID: 0}
-  dialogue:
-  - 'I''m fixing you! '
-  - 'No snip-snips! '
-  - 'Snip-snips make inside parts go outside!
-
-'
-  - I'm still all here.
+  npcName: 
+  lines:
+  - I'm fixing you.
+  - No snips-snips!
+  - Snips-snips make inside parts outside.
+  - I'm still all here!
   optionText: []
   option0: {fileID: 0}
   option1: {fileID: 0}

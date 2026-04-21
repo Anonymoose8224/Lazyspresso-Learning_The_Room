@@ -15,9 +15,10 @@ MonoBehaviour:
   characters: 00000000000000000000000000000000
   randomNPCName: 
   randomNPCPortrait: {fileID: 0}
-  dialogue:
-  - Ooww!!
-  - Don't use the shiny snip-snips.
+  npcName: 
+  lines:
+  - "Ooww!\t"
+  - Don't use the shiny snip-snips!
   - They're too big.
   - I'm okay. I'm okay. I'm okay...
   optionText: []

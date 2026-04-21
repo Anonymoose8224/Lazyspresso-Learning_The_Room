@@ -15,17 +15,18 @@ MonoBehaviour:
   characters: 03000000030000000300000003000000050000000300000003000000030000000300000003000000
   randomNPCName: 
   randomNPCPortrait: {fileID: 0}
-  dialogue:
-  - The White Lady hasn't come to play the song.
-  - The song is long lost.
+  npcName: 
+  lines:
+  - The White Lady hasn't come to play that song.
+  - The song is long lost...
   - Find the quiet song.
-  - It will make the pain disappear...
+  - It will make the pain disappear.
   - Where is the song?
   - The White Lady always sang the song.
   - She always read those stories after she sang.
-  - She hasn't came back in a long time...
-  - The Black Thing came
-  - It took everything away...
+  - She hasn't came back in a long time.
+  - The Black Thing came.
+  - It took all away...
   optionText: []
   option0: {fileID: 0}
   option1: {fileID: 0}

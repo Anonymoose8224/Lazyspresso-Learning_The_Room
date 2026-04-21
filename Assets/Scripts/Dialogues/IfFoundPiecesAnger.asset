@@ -15,11 +15,12 @@ MonoBehaviour:
   characters: 05000000010000000100000001000000
   randomNPCName: 
   randomNPCPortrait: {fileID: 0}
-  dialogue:
+  npcName: 
+  lines:
   - You are fixed!
-  - I'm never fixed...
+  - "I'm never fixed.\t"
   - The hurt always comes back!
-  - The Bllack Thing always comes to break!
+  - The black thing always comes to break!
   optionText: []
   option0: {fileID: 0}
   option1: {fileID: 0}

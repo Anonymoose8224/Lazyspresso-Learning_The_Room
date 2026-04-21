@@ -15,14 +15,14 @@ MonoBehaviour:
   characters: 05000000030000000300000003000000030000000300000003000000
   randomNPCName: 
   randomNPCPortrait: {fileID: 0}
-  dialogue:
+  npcName: 
+  lines:
   - I have played the song.
-  - That's a nice song.
-  - Have not heard it in a long time...
+  - You played the song...Such a nice song.
+  - Have not heard it in a long time.
   - When the Black Thing came
   - The songs and stories stop
-  - 'And that will be the last time '
-  - 'I ever hear it... '
+  - And that will be the last time I ever hear it...
   optionText: []
   option0: {fileID: 0}
   option1: {fileID: 0}

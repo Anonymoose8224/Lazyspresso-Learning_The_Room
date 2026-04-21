@@ -15,12 +15,13 @@ MonoBehaviour:
   characters: 010000000100000005000000010000000100000001000000
   randomNPCName: 
   randomNPCPortrait: {fileID: 0}
-  dialogue:
+  npcName: 
+  lines:
   - It's all broke!
   - I'm everywhere!
-  - It was an accident!
+  - It was an accident
   - Is it an accident?!
-  - To be broke, then fix, broke and fix, and broke and fix!
+  - To be broken then fix, broke and fix, and broke and fix
   - And I'm hurt because of it!
   optionText: []
   option0: {fileID: 0}

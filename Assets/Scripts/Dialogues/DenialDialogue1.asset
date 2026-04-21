@@ -15,14 +15,13 @@ MonoBehaviour:
   characters: 0000000000000000050000000000000000000000
   randomNPCName: 
   randomNPCPortrait: {fileID: 0}
-  dialogue:
-  - 'I''m not sick, I feel amazing!
-
-'
-  - See? I'm happy.
-  - You have a boo-boo
-  - "No I don't, child! It's just crayon marks!\n "
-  - The White Lady says I'm fine...
+  npcName: 
+  lines:
+  - I'm not sick, I feel amazing!
+  - See? I'm happy...
+  - You have a boo-boo.
+  - No I don't.
+  - It's crayon marks. The White Lady says I'm fine.
   optionText: []
   option0: {fileID: 0}
   option1: {fileID: 0}

@@ -18,6 +18,8 @@ public class DialogueManager : MonoBehaviour
         dialogueBox.SetActive(true);
         currentSystem = system;
 
+        index = 0;
+
         npcName.text = currentSystem.npcName;
 
         dialogueText.text = currentSystem.lines[index];

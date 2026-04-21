@@ -5,10 +5,12 @@ public class InventorySlotUI : MonoBehaviour
 {
     [SerializeField] private Image itemIcon;
 
+
     private void Awake()
     {
         if (itemIcon == null)
         {
+            Debug.Log("The Ui is Empty");
             itemIcon = GetComponent<Image>();
         }
     }
@@ -17,6 +19,7 @@ public class InventorySlotUI : MonoBehaviour
     {
         if (item == null)
         {
+            Debug.Log("Clearing the slots");
             ClearSlot();
             return;
         }
@@ -39,5 +42,14 @@ public class InventorySlotUI : MonoBehaviour
     {
         itemIcon.sprite = null;
         itemIcon.enabled = false;
+    }
+
+    public bool ShowImage() 
+    {
+        if (itemIcon == null)
+            return false;
+        else
+            return true;
+        
     }
 }

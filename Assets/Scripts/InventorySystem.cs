@@ -8,26 +8,24 @@ public class InventorySystem : MonoBehaviour
     public InventorySlot[] specialInventory;
     [SerializeField] private int count;
     [SerializeField] private InventoryUI inventoryUI;
-
     private void Awake()
     {
-        inventorySlots = new InventorySlot[inventorySize];
-        specialInventory = new InventorySlot[specialInventorySize];
-
-        for (int i = 0; i < inventorySize; i++)
         {
-            inventorySlots[i] = new InventorySlot(null);
-        }
+            inventorySlots = new InventorySlot[inventorySize];
+            specialInventory = new InventorySlot[specialInventorySize];
 
-        for (int i = 0; i < specialInventorySize; i++)
-        {
-            specialInventory[i] = new InventorySlot(null);
+            for (int i = 0; i < inventorySize; i++)
+            {
+                inventorySlots[i] = new InventorySlot(null);
+            }
+
+            for (int i = 0; i < specialInventorySize; i++)
+            {
+                specialInventory[i] = new InventorySlot(null);
+            }
         }
     }
-    private void Start()
-    {
-        inventoryUI.RefreshUI();
-    }
+
     public bool AddItem(GameObject itemAdded)
     {
         if (itemAdded == null)

@@ -34,6 +34,11 @@ public class Ending : MonoBehaviour
         pause.Restart();
     }
 
+    public void SwitchScene()
+    {
+        pause.EndingScene();
+    }
+
     public bool IsTheWinner()
     {
         return IsWon;

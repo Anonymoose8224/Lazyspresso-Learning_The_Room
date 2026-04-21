@@ -2,15 +2,28 @@ using UnityEngine;
 
 public class MonsterTimer : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private float MonsterWaitMax = 50f;
+    [SerializeField] private float MonsterPaticenceDrain = 4f;
+    [SerializeField] private float CurrentMonsterTime;
+    [SerializeField] MonsterDetect MonsterA;
+
+    private void Start()
     {
-        
+        CurrentMonsterTime = MonsterWaitMax;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        HandleMonsterPaticence();
+    }
+    public void HandleMonsterPaticence()
+    {
+        CurrentMonsterTime -= MonsterPaticenceDrain * Time.deltaTime;
+
+        if(CurrentMonsterTime <= 0)
+        {
+            MonsterA.playAnimation();
+            CurrentMonsterTime = MonsterWaitMax;
+        }
     }
 }

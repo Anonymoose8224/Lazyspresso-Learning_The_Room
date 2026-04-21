@@ -3,10 +3,12 @@ using UnityEngine;
 public class MonsterDetect : MonoBehaviour
 {
     [SerializeField] Animation anim;
+    [SerializeField] PlayerHead player;
     private void OnTriggerEnter(Collider other)
     {
-        if (CompareTag("Player"))
+        if (player.CompareTag("Player"))
             Debug.Log("Player Has enter the monster range");
+
 
         else
             Debug.Log("Nothing to detect");
@@ -19,12 +21,12 @@ public class MonsterDetect : MonoBehaviour
         switch (rand)
         {
             case 0:
-                anim.Play("MonsterMove");
+                anim.Play("NewMonsterMove");
                 break;
             case 1:
-                anim["MonsterMove"].speed = -1.0f;
-                anim["MonsterMove"].time = anim["MonsterMove"].length;
-                anim.Play("MonsterMove");
+                anim["NewMonsterMove"].speed = -1.0f;
+                anim["NewMonsterMove"].time = anim["NewMonsterMove"].length;
+                anim.Play("NewMonsterMove");
                 break;
             default:
                 Debug.Log("Your Lucky");

@@ -7,6 +7,8 @@ public class TempPauseMenu : MonoBehaviour
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject PlayerUI;
     [SerializeField] private Ending endingS;
+    [SerializeField] private InventoryUI inventoryUI;
+
 
     private bool isPaused = false;
     public bool isAble = false;
@@ -66,8 +68,19 @@ public class TempPauseMenu : MonoBehaviour
         isPaused = false;
         endingS.IsWon = false;
         Time.timeScale = 1f;
+        inventoryUI.RefreshUI();
+
         Debug.Log("Restarting the Game!");
         SceneManager.LoadScene("GameScene");
+    }
+
+
+
+    public void EndingScene()
+    {
+        Debug.Log("GameEnding Closed");
+        SceneManager.LoadScene("Pot Ending Scene");
+
     }
 
     public bool IsPaused()

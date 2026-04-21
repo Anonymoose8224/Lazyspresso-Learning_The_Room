@@ -39,10 +39,10 @@ public class PuzzleSolving : MonoBehaviour
         {
             puzzleCompleted = true;
             Debug.Log("Puzzle Complete!");
-            if(hasAnimation == true && puzzleCompleted == true)
+            /*if(hasAnimation == true && puzzleCompleted == true)
             {
                 clip.Play("CompletedCaterpillarPuzzle");
-            }
+            }*/
             GiveItemToPlayer();
             GiveSpecialItem();
             

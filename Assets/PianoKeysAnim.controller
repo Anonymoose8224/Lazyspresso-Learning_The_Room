@@ -14,6 +14,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: PianoKey
     m_EventTreshold: 3
+  - m_ConditionMode: 1
+    m_ConditionEvent: KeyPress
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 135435614144092341}
   m_Solo: 0
@@ -42,6 +45,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: PianoKey
     m_EventTreshold: 2
+  - m_ConditionMode: 1
+    m_ConditionEvent: KeyPress
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8251078570933836861}
   m_Solo: 0
@@ -70,6 +76,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: IsClicked
     m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: KeyPress
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7173829626844360396}
   m_Solo: 0
@@ -97,6 +106,9 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 6
     m_ConditionEvent: PianoKey
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: KeyPress
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7541647758544025439}
@@ -160,6 +172,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: PianoKey
     m_EventTreshold: 2
+  - m_ConditionMode: 1
+    m_ConditionEvent: KeyPress
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8251078570933836861}
   m_Solo: 0
@@ -188,6 +203,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: PianoKey
     m_EventTreshold: 1
+  - m_ConditionMode: 1
+    m_ConditionEvent: KeyPress
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7173829626844360396}
   m_Solo: 0
@@ -216,6 +234,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: PianoKey
     m_EventTreshold: 1
+  - m_ConditionMode: 1
+    m_ConditionEvent: KeyPress
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7173829626844360396}
   m_Solo: 0
@@ -294,6 +315,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: PianoKey
     m_EventTreshold: 2
+  - m_ConditionMode: 1
+    m_ConditionEvent: KeyPress
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8251078570933836861}
   m_Solo: 0
@@ -322,6 +346,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: PianoKey
     m_EventTreshold: 1
+  - m_ConditionMode: 1
+    m_ConditionEvent: KeyPress
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7173829626844360396}
   m_Solo: 0
@@ -445,6 +472,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: PianoKey
     m_EventTreshold: 4
+  - m_ConditionMode: 1
+    m_ConditionEvent: KeyPress
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 135435614144092341}
   m_Solo: 0
@@ -473,6 +503,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: PianoKey
     m_EventTreshold: 2
+  - m_ConditionMode: 1
+    m_ConditionEvent: KeyPress
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8251078570933836861}
   m_Solo: 0
@@ -500,6 +533,9 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 6
     m_ConditionEvent: PianoKey
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: KeyPress
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7541647758544025439}
@@ -559,6 +595,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: PianoKey
     m_EventTreshold: 3
+  - m_ConditionMode: 1
+    m_ConditionEvent: KeyPress
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 135435614144092341}
   m_Solo: 0
@@ -611,6 +650,9 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 6
     m_ConditionEvent: PianoKey
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: KeyPress
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7541647758544025439}
@@ -700,6 +742,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: PianoKey
     m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: KeyPress
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7541647758544025439}
   m_Solo: 0
@@ -728,6 +773,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: PianoKey
     m_EventTreshold: 3
+  - m_ConditionMode: 1
+    m_ConditionEvent: KeyPress
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 135435614144092341}
   m_Solo: 0

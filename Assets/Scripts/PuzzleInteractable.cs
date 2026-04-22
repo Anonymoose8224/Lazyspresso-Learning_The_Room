@@ -4,6 +4,8 @@ public class PuzzleInteractable : Baseinteractable
 {
     
     [SerializeField] private InventorySystem inventorySystem;
+    [SerializeField] private AudioPlayer AudClip;
+    [SerializeField] private int IndexSound;
     /*
     [SerializeField] private PuzzleSolving puzzleSolving;
     [SerializeField] private string itemTagPickup = "PuzzlePiece";
@@ -12,6 +14,8 @@ public class PuzzleInteractable : Baseinteractable
     */
     public override void Interact(Ray ray, float maxDistance)
     {
+        Debug.Log("PlayingSound");
+        AudClip.PlaySound(IndexSound);
         inventorySystem.AddItem(gameObject);
 
         /*if (Physics.Raycast(ray, out RaycastHit hitObject, maxDistance))

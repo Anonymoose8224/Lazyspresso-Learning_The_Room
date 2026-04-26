@@ -5,7 +5,6 @@ public class KeyFeedback : MonoBehaviour
 {
     [SerializeField] private AudioPlayer auds;
     [SerializeField] private AnimPlayer anims;
-
     [SerializeField] private float animationSpeed = 1f;
 
 

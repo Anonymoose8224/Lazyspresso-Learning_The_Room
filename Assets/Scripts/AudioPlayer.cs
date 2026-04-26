@@ -3,8 +3,9 @@ using UnityEngine;
 public class AudioPlayer : MonoBehaviour
 {
     [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip[] noteSounds;
+    [SerializeField] public AudioClip[] noteSounds;
     [SerializeField] private float pitch = 1f;
+    [SerializeField] private float volume = 1f;
     public void PlaySound(int noteIndex)
     {
         if (audioSource == null || noteSounds == null || noteSounds.Length == 0)
@@ -21,6 +22,6 @@ public class AudioPlayer : MonoBehaviour
 
         Debug.LogWarning($"Playing sound at: {noteIndex}");
         audioSource.pitch = pitch;
-        audioSource.PlayOneShot(noteSounds[noteIndex]);
+        AudioSource.PlayClipAtPoint(noteSounds[noteIndex], Camera.main.transform.position, volume);
     }
 }

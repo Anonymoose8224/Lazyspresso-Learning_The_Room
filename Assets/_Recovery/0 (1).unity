@@ -3072,7 +3072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PuzzleInteractable
   inventorySystem: {fileID: 163724441}
   AudClip: {fileID: 155364323}
-  IndexSound: 0
+  IndexSound: 1
 --- !u!114 &155364320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3119,7 +3119,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 7a7625942148fc64ea981f2be476ea08, type: 3}
+  m_Resource: {fileID: 8300000, guid: 2def2134b2510e949bd4ce83b4e90fad, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -3219,9 +3219,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioPlayer
   audioSource: {fileID: 155364322}
   noteSounds:
-  - {fileID: 8300000, guid: 7a7625942148fc64ea981f2be476ea08, type: 3}
+  - {fileID: 8300000, guid: 2def2134b2510e949bd4ce83b4e90fad, type: 3}
   pitch: 1
-  volume: 1
 --- !u!1 &160886190
 GameObject:
   m_ObjectHideFlags: 0
@@ -8430,7 +8429,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 8300000, guid: 2def2134b2510e949bd4ce83b4e90fad, type: 3}
   pitch: 4
-  volume: 1
 --- !u!114 &1169784656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9516,7 +9514,6 @@ MonoBehaviour:
   noteSounds:
   - {fileID: 8300000, guid: 2def2134b2510e949bd4ce83b4e90fad, type: 3}
   pitch: 1
-  volume: 1
 --- !u!114 &1322608022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11530,7 +11527,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 8300000, guid: 2def2134b2510e949bd4ce83b4e90fad, type: 3}
   pitch: 2
-  volume: 1
 --- !u!114 &1773635878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11799,7 +11795,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 8300000, guid: 2def2134b2510e949bd4ce83b4e90fad, type: 3}
   pitch: 3
-  volume: 1
 --- !u!1 &1868446805
 GameObject:
   m_ObjectHideFlags: 0

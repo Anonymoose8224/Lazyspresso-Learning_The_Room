@@ -107,6 +107,7 @@ public class InventorySystem : MonoBehaviour
         return true;
     }
 
+
     private void OnDrawGizmos()
     {
         if (!Application.isPlaying)

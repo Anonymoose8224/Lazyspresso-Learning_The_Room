@@ -6506,8 +6506,6 @@ GameObject:
   - component: {fileID: 713171547}
   - component: {fileID: 713171546}
   - component: {fileID: 713171545}
-  - component: {fileID: 713171544}
-  - component: {fileID: 713171543}
   - component: {fileID: 713171542}
   - component: {fileID: 713171549}
   m_Layer: 0
@@ -6559,33 +6557,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &713171543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 713171540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b78382fed9674164f9648d8e55ac7145, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InventoryItemData
-  inventorySprite: {fileID: 21300000, guid: 6cd33b953f236c24dbd469c8ee48c0f3, type: 3}
-  isSpecialItem: 0
---- !u!114 &713171544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 713171540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05d4ea3717c04f9418371275895819da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PuzzleInteractable
-  inventorySystem: {fileID: 163724441}
 --- !u!64 &713171545
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6697,6 +6668,9 @@ MonoBehaviour:
   thrown: 0
   mc: {fileID: 713171545}
   completedRing: {fileID: 1064179063}
+  pickupableRing: {fileID: 1696861620802543713}
+  maxThrowSpeed: 5
+  inventorySystem: {fileID: 163724441}
 --- !u!1001 &731836689
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8685,8 +8659,6 @@ GameObject:
   - component: {fileID: 1146144723}
   - component: {fileID: 1146144722}
   - component: {fileID: 1146144721}
-  - component: {fileID: 1146144720}
-  - component: {fileID: 1146144719}
   - component: {fileID: 1146144718}
   - component: {fileID: 1146144725}
   m_Layer: 0
@@ -8738,33 +8710,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &1146144719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1146144716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b78382fed9674164f9648d8e55ac7145, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InventoryItemData
-  inventorySprite: {fileID: 21300000, guid: 314629c3e8cf6d84b8666d3b4aff8805, type: 3}
-  isSpecialItem: 0
---- !u!114 &1146144720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1146144716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05d4ea3717c04f9418371275895819da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PuzzleInteractable
-  inventorySystem: {fileID: 163724441}
 --- !u!64 &1146144721
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8876,6 +8821,9 @@ MonoBehaviour:
   thrown: 0
   mc: {fileID: 1146144721}
   completedRing: {fileID: 311648934}
+  pickupableRing: {fileID: 181359105583489023}
+  maxThrowSpeed: 5
+  inventorySystem: {fileID: 163724441}
 --- !u!1 &1159551152
 GameObject:
   m_ObjectHideFlags: 0
@@ -11822,8 +11770,6 @@ GameObject:
   - component: {fileID: 1601876630}
   - component: {fileID: 1601876629}
   - component: {fileID: 1601876628}
-  - component: {fileID: 1601876627}
-  - component: {fileID: 1601876626}
   - component: {fileID: 1601876625}
   - component: {fileID: 1601876632}
   m_Layer: 0
@@ -11875,33 +11821,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &1601876626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1601876623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b78382fed9674164f9648d8e55ac7145, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InventoryItemData
-  inventorySprite: {fileID: 21300000, guid: 603b58fe2b7a7b3448c3bba9a301a5f0, type: 3}
-  isSpecialItem: 0
---- !u!114 &1601876627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1601876623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05d4ea3717c04f9418371275895819da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PuzzleInteractable
-  inventorySystem: {fileID: 163724441}
 --- !u!64 &1601876628
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12013,6 +11932,9 @@ MonoBehaviour:
   thrown: 0
   mc: {fileID: 1601876628}
   completedRing: {fileID: 1518655393}
+  pickupableRing: {fileID: 6216318167353864821}
+  maxThrowSpeed: 5
+  inventorySystem: {fileID: 163724441}
 --- !u!114 &1621426465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12782,8 +12704,6 @@ GameObject:
   - component: {fileID: 1842623913}
   - component: {fileID: 1842623912}
   - component: {fileID: 1842623911}
-  - component: {fileID: 1842623910}
-  - component: {fileID: 1842623909}
   - component: {fileID: 1842623908}
   - component: {fileID: 1842623915}
   m_Layer: 0
@@ -12817,8 +12737,8 @@ Rigidbody:
   m_GameObject: {fileID: 1842623906}
   serializedVersion: 5
   m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_LinearDamping: 2
+  m_AngularDamping: 2
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -12835,33 +12755,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &1842623909
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1842623906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b78382fed9674164f9648d8e55ac7145, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InventoryItemData
-  inventorySprite: {fileID: 21300000, guid: ded71a06ca8670644bacd4826a0b19df, type: 3}
-  isSpecialItem: 0
---- !u!114 &1842623910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1842623906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05d4ea3717c04f9418371275895819da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PuzzleInteractable
-  inventorySystem: {fileID: 163724441}
 --- !u!64 &1842623911
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12973,6 +12866,9 @@ MonoBehaviour:
   thrown: 0
   mc: {fileID: 1842623911}
   completedRing: {fileID: 995116126}
+  pickupableRing: {fileID: 5714338623042353492}
+  maxThrowSpeed: 5
+  inventorySystem: {fileID: 163724441}
 --- !u!1 &1868446805
 GameObject:
   m_ObjectHideFlags: 0

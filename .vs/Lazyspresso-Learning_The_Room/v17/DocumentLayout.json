@@ -3,32 +3,44 @@
   "WorkspaceRootPath": "C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\assets\\scripts\\temppausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\temppausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\assets\\scripts\\audioplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\audioplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|c:\\unity projects\\learning the room\\lazyspresso-learning_the_room\\assets\\scripts\\foxheadtrack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\foxheadtrack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\assets\\main menu assets\\scripts\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|solutionrelative:assets\\main menu assets\\scripts\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\assets\\scripts\\playercontrols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playercontrols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|c:\\unity projects\\learning the room\\lazyspresso-learning_the_room\\assets\\scripts\\npcinteraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\assets\\scripts\\npcinteraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\npcinteraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\assets\\scripts\\puzzleinteractable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\puzzleinteractable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\assets\\scripts\\pianobrain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pianobrain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\assets\\scripts\\audioplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\audioplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\assets\\scripts\\playerhead.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playerhead.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\assets\\scripts\\monstertimer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\monstertimer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|c:\\unity projects\\learning the room\\lazyspresso-learning_the_room\\assets\\scripts\\temppausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\temppausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\assets\\scripts\\playercontrols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playercontrols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\assets\\scripts\\puzzleinteractable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\puzzleinteractable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\assets\\scripts\\keyfeedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -37,10 +49,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\assets\\scripts\\pianointeractable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pianointeractable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\assets\\scripts\\playerhead.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playerhead.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\assets\\scripts\\pianokey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -69,10 +77,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\assets\\scripts\\monsterdetect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\monsterdetect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\assets\\scripts\\monstertimer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\monstertimer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{916AD69C-EA52-8702-1F61-8468159C6BFC}|Assembly-CSharp.csproj|C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\assets\\scripts\\inventoryslotui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -114,11 +118,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 186,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "PianoKey.cs",
               "DocumentMoniker": "C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\Assets\\Scripts\\PianoKey.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PianoKey.cs",
@@ -131,20 +135,21 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "PianoBrain.cs",
               "DocumentMoniker": "C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\Assets\\Scripts\\PianoBrain.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PianoBrain.cs",
               "ToolTip": "C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\Assets\\Scripts\\PianoBrain.cs",
               "RelativeToolTip": "Assets\\Scripts\\PianoBrain.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAqwB0AAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAmwDcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-21T19:35:13.519Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "PuzzleInteractable.cs",
               "DocumentMoniker": "C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\Assets\\Scripts\\PuzzleInteractable.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PuzzleInteractable.cs",
@@ -157,7 +162,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "NPCInteraction.cs",
               "DocumentMoniker": "C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\Assets\\Scripts\\NPCInteraction.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\NPCInteraction.cs",
@@ -171,13 +176,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "MainMenu.cs",
               "DocumentMoniker": "C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\Assets\\Main Menu assets\\Scripts\\MainMenu.cs",
               "RelativeDocumentMoniker": "Assets\\Main Menu assets\\Scripts\\MainMenu.cs",
               "ToolTip": "C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\Assets\\Main Menu assets\\Scripts\\MainMenu.cs",
               "RelativeToolTip": "Assets\\Main Menu assets\\Scripts\\MainMenu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwAkAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-21T19:14:17.81Z",
               "IsPinned": true,
@@ -185,7 +190,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "TempPauseMenu.cs",
               "DocumentMoniker": "C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\Assets\\Scripts\\TempPauseMenu.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\TempPauseMenu.cs",
@@ -198,25 +203,43 @@
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "AudioPlayer.cs",
               "DocumentMoniker": "C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\Assets\\Scripts\\AudioPlayer.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AudioPlayer.cs",
               "ToolTip": "C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\Assets\\Scripts\\AudioPlayer.cs",
               "RelativeToolTip": "Assets\\Scripts\\AudioPlayer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAqwEwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-22T21:22:30.563Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 0,
+              "Title": "FoxHeadTrack.cs",
+              "DocumentMoniker": "C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\Assets\\Scripts\\FoxHeadTrack.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\FoxHeadTrack.cs",
+              "ToolTip": "C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\Assets\\Scripts\\FoxHeadTrack.cs",
+              "RelativeToolTip": "Assets\\Scripts\\FoxHeadTrack.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwBQAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-01T15:37:22.153Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "MonsterTimer.cs",
               "DocumentMoniker": "C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\Assets\\Scripts\\MonsterTimer.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MonsterTimer.cs",
@@ -224,23 +247,25 @@
               "RelativeToolTip": "Assets\\Scripts\\MonsterTimer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T20:33:47.955Z"
+              "WhenOpened": "2026-04-17T20:33:47.955Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 5,
               "Title": "PlayerHead.cs",
               "DocumentMoniker": "C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\Assets\\Scripts\\PlayerHead.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerHead.cs",
               "ToolTip": "C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\Assets\\Scripts\\PlayerHead.cs",
               "RelativeToolTip": "Assets\\Scripts\\PlayerHead.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwCcAAABZAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAzwCAAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T23:31:59.081Z"
+              "WhenOpened": "2026-01-29T23:31:59.081Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "PlayerControls.cs",
               "DocumentMoniker": "C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\Assets\\Scripts\\PlayerControls.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerControls.cs",
@@ -248,12 +273,11 @@
               "RelativeToolTip": "Assets\\Scripts\\PlayerControls.cs",
               "ViewState": "AgIAAAgBAAAAAAAAAAAQwBYBAACZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T23:57:23.479Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-29T23:57:23.479Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "KeyFeedback.cs",
               "DocumentMoniker": "C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\Assets\\Scripts\\KeyFeedback.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\KeyFeedback.cs",
@@ -265,7 +289,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "Ending.cs",
               "DocumentMoniker": "C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\Assets\\Scripts\\Ending.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Ending.cs",
@@ -277,7 +301,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "PianoInteractable.cs",
               "DocumentMoniker": "C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\Assets\\Scripts\\PianoInteractable.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PianoInteractable.cs",
@@ -288,12 +312,8 @@
               "WhenOpened": "2026-04-24T20:42:18.79Z"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "BaseInteractable.cs",
               "DocumentMoniker": "C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\Assets\\Scripts\\BaseInteractable.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\BaseInteractable.cs",
@@ -305,7 +325,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "PlayerCamera.cs",
               "DocumentMoniker": "C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\Assets\\Scripts\\PlayerCamera.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerCamera.cs",
@@ -317,7 +337,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "InventorySystem.cs",
               "DocumentMoniker": "C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\Assets\\Scripts\\InventorySystem.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\InventorySystem.cs",
@@ -329,7 +349,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "AnimPlayer.cs",
               "DocumentMoniker": "C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\Assets\\Scripts\\AnimPlayer.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AnimPlayer.cs",
@@ -341,7 +361,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "DelegateHelpers.cs",
               "DocumentMoniker": "C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\Library\\PackageCache\\com.unity.inputsystem@02433b2481ab\\InputSystem\\Utilities\\DelegateHelpers.cs",
               "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.inputsystem@02433b2481ab\\InputSystem\\Utilities\\DelegateHelpers.cs",
@@ -353,7 +373,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "InventoryUI.cs",
               "DocumentMoniker": "C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\Assets\\Scripts\\InventoryUI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\InventoryUI.cs",
@@ -365,7 +385,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "MonsterDetect.cs",
               "DocumentMoniker": "C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\Assets\\Scripts\\MonsterDetect.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MonsterDetect.cs",
@@ -377,7 +397,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "InventorySlotUI.cs",
               "DocumentMoniker": "C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\Assets\\Scripts\\InventorySlotUI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\InventorySlotUI.cs",
@@ -389,7 +409,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "EventSystem.cs",
               "DocumentMoniker": "C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\Library\\PackageCache\\com.unity.ugui@1890c14c96ff\\Runtime\\UGUI\\EventSystem\\EventSystem.cs",
               "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.ugui@1890c14c96ff\\Runtime\\UGUI\\EventSystem\\EventSystem.cs",
@@ -401,7 +421,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "InventoryItemData.cs",
               "DocumentMoniker": "C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\Assets\\Scripts\\InventoryItemData.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\InventoryItemData.cs",
@@ -413,7 +433,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "PuzzleSolving.cs",
               "DocumentMoniker": "C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\Assets\\Scripts\\PuzzleSolving.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PuzzleSolving.cs",
@@ -425,7 +445,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "PillarInteract.cs",
               "DocumentMoniker": "C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\Assets\\Scripts\\PillarInteract.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PillarInteract.cs",
@@ -437,7 +457,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "PlayerMove.cs",
               "DocumentMoniker": "C:\\Unity Projects\\Learning The Room\\Lazyspresso-Learning_The_Room\\Assets\\Scripts\\PlayerMove.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerMove.cs",

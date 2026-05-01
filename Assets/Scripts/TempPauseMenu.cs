@@ -8,6 +8,8 @@ public class TempPauseMenu : MonoBehaviour
     [SerializeField] private GameObject PlayerUI;
     [SerializeField] private Ending endingS;
     [SerializeField] private InventoryUI inventoryUI;
+    [SerializeField] private AudioPlayer AudClip;
+
 
 
     private bool isPaused = false;
@@ -55,6 +57,7 @@ public class TempPauseMenu : MonoBehaviour
 
     public void QuitToMainMenu()
     {
+        AudClip.enabled = false;
         isPaused = false;
         endingS.IsWon = false;
         Time.timeScale = 1f;
@@ -69,6 +72,7 @@ public class TempPauseMenu : MonoBehaviour
         endingS.IsWon = false;
         Time.timeScale = 1f;
         inventoryUI.RefreshUI();
+        AudClip.PlayMusic();
 
         Debug.Log("Restarting the Game!");
         SceneManager.LoadScene("GameScene");

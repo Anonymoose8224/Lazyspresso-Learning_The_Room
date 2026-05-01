@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
@@ -11,6 +12,8 @@ public class PianoBrain : MonoBehaviour
     [SerializeField] private PianoInteractable pianointer;
     [SerializeField] private PuzzleSolving puzzSolve;
     [SerializeField] public bool hasGivenReward = false;
+    [SerializeField] private AudioPlayer auds;
+    [SerializeField] private AudioSource MusCude;
 
     private static PianoBrain instance;
     private bool inputLocked;
@@ -54,6 +57,9 @@ public class PianoBrain : MonoBehaviour
 
         if (correctPswd[i] != note)
         {
+            int ind = 0;
+            auds.PlaySound(ind);
+
             Debug.Log("wrong note");
             playerComb.Clear();
             return;
@@ -63,19 +69,40 @@ public class PianoBrain : MonoBehaviour
         {
             Debug.Log("Correct");
             playerComb.Clear();
-            pianointer.PianoExit();
+            auds.PlayMusic();
+
 
             if (!hasGivenReward)
             {
-                Debug.Log("Inventory item successfully added");
-                puzzSolve.PuzzleSystem();
-                hasGivenReward = true;
-
+                StartCoroutine(FirstSolveSequence());
             }
-;
-
+            else
+            {
+                pianointer.PianoExit();
+            }
         }
     }
+    private IEnumerator FirstSolveSequence()
+    {
+        inputLocked = true;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
+        MusCude.Pause();
+
+        auds.PlayMusic();
+        puzzSolve.PuzzleSystem();
+
+        hasGivenReward = true;
+        yield return new WaitForSeconds(auds.GetMusLength());
+
+        pianointer.PianoExit();
+        MusCude.Play();
+
+        inputLocked = false;
+    }
+
+
     private void PianoKeyClick(UnityEngine.InputSystem.InputAction.CallbackContext ctx)
     {
         Debug.Log($"INPUT FIRED on: {GetInstanceID()}");

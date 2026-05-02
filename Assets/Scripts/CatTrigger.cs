@@ -11,6 +11,9 @@ public class CaterpillarTriggerZone : MonoBehaviour
 
     [SerializeField] private ZoneType zoneType;
     [SerializeField] private CaterpillarPuzzleThrowing puzzle;
+    [SerializeField] private AudioPlayer AudClip;
+    [SerializeField] private int IndexSound;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -35,6 +38,8 @@ public class CaterpillarTriggerZone : MonoBehaviour
             }
             if (!ring.IsThrown())
             {
+                IndexSound = 0;
+                AudClip.PlaySound(IndexSound);
                 return;
             }
 
@@ -46,6 +51,8 @@ public class CaterpillarTriggerZone : MonoBehaviour
             else if (zoneType == ZoneType.Fail)
             {
                 Debug.Log("RING HIT FAIL!");
+                IndexSound = 1;
+                AudClip.PlaySound(IndexSound);
                 ring.FailThrow();
             }
         }

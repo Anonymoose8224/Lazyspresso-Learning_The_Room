@@ -58,8 +58,10 @@ public class PianoBrain : MonoBehaviour
         if (correctPswd[i] != note)
         {
             int ind = 0;
-            auds.PlaySound(ind);
-
+            if (!hasGivenReward)
+            {
+                auds.PlaySound(ind);
+            }
             Debug.Log("wrong note");
             playerComb.Clear();
             return;
@@ -69,7 +71,6 @@ public class PianoBrain : MonoBehaviour
         {
             Debug.Log("Correct");
             playerComb.Clear();
-            auds.PlayMusic();
 
 
             if (!hasGivenReward)
@@ -97,6 +98,7 @@ public class PianoBrain : MonoBehaviour
         yield return new WaitForSeconds(auds.GetMusLength());
 
         pianointer.PianoExit();
+
         MusCude.Play();
 
         inputLocked = false;

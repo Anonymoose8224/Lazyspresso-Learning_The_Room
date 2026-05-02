@@ -18,6 +18,7 @@ public class PuzzleInteractable : Baseinteractable
         AudClip.PlaySound(IndexSound);
         inventorySystem.AddItem(gameObject);
 
+
         /*if (Physics.Raycast(ray, out RaycastHit hitObject, maxDistance))
         {
             GameObject objectPuzzle = hitObject.collider.gameObject;

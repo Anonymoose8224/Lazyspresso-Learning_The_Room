@@ -35,7 +35,7 @@ RenderSettings:
   m_DefaultReflectionMode: 1
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 1
+  m_ReflectionIntensity: 0
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1165136804}
   m_UseRadianceAmbientProbe: 0
@@ -8796,7 +8796,7 @@ Light:
   serializedVersion: 12
   m_Type: 1
   m_Color: {r: 0.98725295, g: 1, b: 0.8886792, a: 1}
-  m_Intensity: 0.54
+  m_Intensity: 1.2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -8859,7 +8859,7 @@ Transform:
   m_GameObject: {fileID: 1165136802}
   serializedVersion: 2
   m_LocalRotation: {x: 0.041188166, y: 0.45684808, z: -0.021181822, w: 0.88833815}
-  m_LocalPosition: {x: -20.96, y: 5.47, z: 7.78}
+  m_LocalPosition: {x: -21.46, y: 5.47, z: 7.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9552,11 +9552,11 @@ Light:
   m_Enabled: 1
   serializedVersion: 12
   m_Type: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 128.3
-  m_Range: 10.358344
-  m_SpotAngle: 163.59119
-  m_InnerSpotAngle: 139.66821
+  m_Color: {r: 0.9803922, g: 0.9960785, b: 0.8862746, a: 1}
+  m_Intensity: 50
+  m_Range: 12.919012
+  m_SpotAngle: 125.227875
+  m_InnerSpotAngle: 87.41575
   m_CookieSize2D: {x: 0.5, y: 0.5}
   m_Shadows:
     m_Type: 0
@@ -10627,7 +10627,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 12
   m_Type: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9803922, g: 0.9960785, b: 0.8862746, a: 1}
   m_Intensity: 128.3
   m_Range: 27.160467
   m_SpotAngle: 179

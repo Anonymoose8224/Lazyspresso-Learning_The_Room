@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,7 +10,7 @@ public class PlayerHead : MonoBehaviour
     //[SerializeField] Baseinteractable plInteractable;
     [SerializeField] private float maxDistance = 10f;
     [SerializeField] TempPauseMenu pauseMenu;
-    [SerializeField] Ending endings;
+    [SerializeField] private CaterpillarPuzzleThrowing caterpillarPuzzle;
 
     Vector2 moveInput;
     public bool isActive = true;
@@ -28,16 +29,23 @@ public class PlayerHead : MonoBehaviour
 
         plControls.FPPlayer.Interact.performed += Interact;
 
+        plControls.FPPlayer.Throw.performed += Throw;
+
         Cursor.visible = false;
 
         Cursor.lockState = CursorLockMode.Locked;
 
     }
 
+    private void Throw(InputAction.CallbackContext ctx)
+    {
+        caterpillarPuzzle.ThrowRing();
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (!isActive || pauseMenu.IsPaused() || endings.IsTheWinner() || plMove == null)
+        if (!isActive || pauseMenu.IsPaused() || plMove == null)
             return;
 
         plMove.Move(moveInput);
@@ -54,7 +62,7 @@ public class PlayerHead : MonoBehaviour
     private void Look(InputAction.CallbackContext ctx)
     {
 
-        if (pauseMenu.IsPaused() || endings.IsTheWinner() || plMove == null || plCam == null || !plCam.CanLook)
+        if (pauseMenu.IsPaused() || plMove == null || plCam == null || !plCam.CanLook)
             return;
 
         Vector2 inputValues = ctx.ReadValue<Vector2>();

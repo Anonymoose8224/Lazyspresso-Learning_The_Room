@@ -3503,32 +3503,33 @@ MonoBehaviour:
   - {fileID: 911545578}
   - {fileID: 1181175162}
   - {fileID: 828538678}
---- !u!114 &163724446
-MonoBehaviour:
+--- !u!54 &163724449
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 163724435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 857ea2003e97ed24e8972de19e3acc61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CaterpillarPuzzleThrowing
-  rings:
-  - {fileID: 1842623906}
-  - {fileID: 713171540}
-  - {fileID: 1146144716}
-  - {fileID: 1601876623}
-  startingRing: {fileID: 0}
-  counter: 0
-  inventorySystem: {fileID: 163724441}
-  switchingRings:
-  - {fileID: 1842623915}
-  - {fileID: 713171549}
-  - {fileID: 1146144725}
-  - {fileID: 1601876632}
-  inThrowingArea: 0
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 0
+  m_ImplicitTensor: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &165752225 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0d84e542800bdb049b2402d7cf349f27, type: 3}
@@ -4404,6 +4405,7 @@ GameObject:
   - component: {fileID: 332391914}
   - component: {fileID: 332391913}
   - component: {fileID: 332391912}
+  - component: {fileID: 332391916}
   m_Layer: 0
   m_Name: TriggerAreaForFail
   m_TagString: Untagged
@@ -4504,6 +4506,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 543450653522081289}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &332391916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332391911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19ff9ddcd19b83c41b88c951f9ec1de8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CaterpillarTriggerZone
+  zoneType: 1
+  puzzle: {fileID: 1791502660}
 --- !u!1 &334030223
 GameObject:
   m_ObjectHideFlags: 0
@@ -6317,6 +6333,7 @@ GameObject:
   - component: {fileID: 686089547}
   - component: {fileID: 686089546}
   - component: {fileID: 686089545}
+  - component: {fileID: 686089549}
   m_Layer: 0
   m_Name: TriggerAreaForComplete
   m_TagString: Untagged
@@ -6417,6 +6434,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 543450653522081289}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &686089549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686089544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19ff9ddcd19b83c41b88c951f9ec1de8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CaterpillarTriggerZone
+  zoneType: 2
+  puzzle: {fileID: 1791502660}
 --- !u!1 &686481082 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8074746006475012435, guid: 707ea8f020391c3478e65467fca8bc83, type: 3}
@@ -9368,6 +9399,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
   pausePanel: {fileID: 1482614926}
   PlayerUI: {fileID: 0}
+  endingS: {fileID: 0}
   isAble: 0
 --- !u!114 &1215452497
 MonoBehaviour:
@@ -9783,7 +9815,7 @@ PrefabInstance:
     - target: {fileID: 3021024636660127411, guid: 707ea8f020391c3478e65467fca8bc83, type: 3}
       propertyPath: caterpillarPuzzle
       value: 
-      objectReference: {fileID: 163724446}
+      objectReference: {fileID: 1791502660}
     - target: {fileID: 4523398123802462410, guid: 707ea8f020391c3478e65467fca8bc83, type: 3}
       propertyPath: m_ClearFlags
       value: 1
@@ -9931,6 +9963,9 @@ PrefabInstance:
       addedObject: {fileID: 389078361}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1767442113030278077, guid: 707ea8f020391c3478e65467fca8bc83, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 163724449}
+    - targetCorrespondingSourceObject: {fileID: 1767442113030278077, guid: 707ea8f020391c3478e65467fca8bc83, type: 3}
       insertIndex: -1
       addedObject: {fileID: 163724440}
     - targetCorrespondingSourceObject: {fileID: 1767442113030278077, guid: 707ea8f020391c3478e65467fca8bc83, type: 3}
@@ -9939,9 +9974,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1767442113030278077, guid: 707ea8f020391c3478e65467fca8bc83, type: 3}
       insertIndex: -1
       addedObject: {fileID: 163724443}
-    - targetCorrespondingSourceObject: {fileID: 1767442113030278077, guid: 707ea8f020391c3478e65467fca8bc83, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 163724446}
     - targetCorrespondingSourceObject: {fileID: 8074746006475012435, guid: 707ea8f020391c3478e65467fca8bc83, type: 3}
       insertIndex: -1
       addedObject: {fileID: 686481083}
@@ -11354,6 +11386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TempPauseMenu
   pausePanel: {fileID: 1482614926}
   PlayerUI: {fileID: 44134553}
+  endingS: {fileID: 0}
   isAble: 0
 --- !u!1 &1518655393
 GameObject:
@@ -12421,6 +12454,8 @@ GameObject:
   - component: {fileID: 1791502658}
   - component: {fileID: 1791502657}
   - component: {fileID: 1791502656}
+  - component: {fileID: 1791502660}
+  - component: {fileID: 1791502661}
   m_Layer: 0
   m_Name: TriggerAreaForHand
   m_TagString: Untagged
@@ -12447,8 +12482,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.16, z: 1}
+  m_Center: {x: 0, y: -0.03, z: 0}
 --- !u!23 &1791502657
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12515,12 +12550,50 @@ Transform:
   m_GameObject: {fileID: 1791502655}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: -0.5}
-  m_LocalPosition: {x: -0.5873331, y: -0.41333327, z: 0.04616666}
+  m_LocalPosition: {x: -0.5873331, y: -0.41333327, z: 0.141}
   m_LocalScale: {x: 1.6666667, y: 1.6666667, z: 1.6666667}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 543450653522081289}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1791502660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791502655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857ea2003e97ed24e8972de19e3acc61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CaterpillarPuzzleThrowing
+  rings:
+  - {fileID: 1842623906}
+  - {fileID: 713171540}
+  - {fileID: 1146144716}
+  - {fileID: 1601876623}
+  startingRing: {fileID: 0}
+  counter: 0
+  inventorySystem: {fileID: 163724441}
+  PuzzSyst: {fileID: 7686473782731408364}
+  triggerAreaForHand: {fileID: 1791502656}
+  triggerAreaForFail: {fileID: 332391912}
+  triggerAreaForComplete: {fileID: 686089545}
+--- !u!114 &1791502661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791502655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19ff9ddcd19b83c41b88c951f9ec1de8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CaterpillarTriggerZone
+  zoneType: 0
+  puzzle: {fileID: 1791502660}
 --- !u!1 &1799480694 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: c80969772ef25cd4c89d5e28b77e665a, type: 3}
@@ -17028,10 +17101,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2250638990053637033}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 077603807239da847adcceadb89acfa0, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c48c74e47e028642832f61d4b5baa1e, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NPCInteraction
-  PzSolve: {fileID: 7686473782731408364}
+  m_EditorClassIdentifier: Assembly-CSharp::CatapillerInteract
+  caterpillarPuzzle: {fileID: 1791502660}
 --- !u!4 &7809969694732261355
 Transform:
   m_ObjectHideFlags: 0

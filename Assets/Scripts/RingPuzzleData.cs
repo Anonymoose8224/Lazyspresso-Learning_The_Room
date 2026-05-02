@@ -64,6 +64,7 @@ public class RingPuzzleData : MonoBehaviour, IThrowable
     }
     public void SuccessThrow()
     {
+        Debug.Log($"{gameObject.name} SuccessThrow fired");
         if (thrown == true)
         {
             completedRing.SetActive(true);
@@ -86,7 +87,7 @@ public class RingPuzzleData : MonoBehaviour, IThrowable
     {
         this.gameObject.transform.localPosition = startPosition;
     }
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
         if (thrown == false)
         {
@@ -101,5 +102,9 @@ public class RingPuzzleData : MonoBehaviour, IThrowable
         {
             FailThrow();
         }
+    }*/
+    public bool IsThrown()
+    {
+        return thrown;
     }
 }
